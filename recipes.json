@@ -1,4 +1,1152 @@
-[{
+[
+  {
+    "id": "Greek Garbanzo Salad with Feta and Mediterranean Vinaigrette",
+    "cuisine": "greek",
+    "ingredients": [
+      "lettuce",
+      "olives",
+      "tomatoes",
+      "garlic",
+      "pepper",
+      "onion",
+      "garbanzo beans",
+      "feta cheese"
+    ]
+  },
+  {
+    "id": "Chicken Adobo Deviled Eggs",
+    "cuisine": "filipino",
+    "ingredients": [
+      "eggs",
+      "pepper",
+      "salt",
+      "mayonnaise",
+      "olive oil",
+      "chilis",
+      "chicken",
+      "garlic",
+      "onion",
+      "soy sauce",
+      "butter",
+      "livers"
+    ]
+  },
+  {
+    "id": "Chapati",
+    "cuisine": "indian",
+    "ingredients": [
+      "water",
+      "oil",
+      "wheat",
+      "salt"
+    ]
+  },
+  {
+    "id": "Butter Chicken",
+    "cuisine": "indian",
+    "ingredients": [
+      "black pepper",
+      "cornflour",
+      "cayenne pepper",
+      "onions",
+      "garlic",
+      "milk",
+      "butter",
+      "lemons",
+      "water",
+      "passata",
+      "cumin",
+      "chicken",
+      "tomatoes",
+      "cream",
+      "yogurt",
+      "bay leaf"
+    ]
+  },
+  {
+    "id": "Jamaican Spice Cake",
+    "cuisine": "jamaican",
+    "ingredients": [
+      "flour",
+      "sugar",
+      "butter",
+      "eggs",
+      "ginger",
+      "salt",
+      "cinnamon",
+      "milk",
+      "vanilla extract",
+      "baking powder"
+    ]
+  },
+  {
+    "id": "Spanish Surf and Turf",
+    "cuisine": "spanish",
+    "ingredients": [
+      "olive oil",
+      "salt",
+      "shrimp",
+      "pepper",
+      "garlic",
+      "cilantro",
+      "chilis",
+      "parsley",
+      "steak",
+      "white vinegar",
+      "bay leaf",
+      "chorizo sausage"
+    ]
+  },
+  {
+    "id": "Almond and Pistachio Biscotti",
+    "cuisine": "italian",
+    "ingredients": [
+      "sugar",
+      "pistachios",
+      "almonds",
+      "flour",
+      "vanilla extract",
+      "olive oil",
+      "eggs",
+      "baking powder",
+      "cranberries"
+    ]
+  },
+  {
+    "id": "Pork and Pineapple Tacos",
+    "cuisine": "spanish",
+    "ingredients": [
+      "olive oil",
+      "onion",
+      "pineapple",
+      "pork",
+      "peppers",
+      "tortillas",
+      "cheese",
+      "pepper",
+      "salt",
+      "lettuce",
+      "lime",
+      "chilis",
+      "cilantro"
+    ]
+  },
+  {
+    "id": "Tomato Basil Bruschetta",
+    "cuisine": "italian",
+    "ingredients": [
+      "tomatoes",
+      "basil",
+      "garlic",
+      "olive oil",
+      "salt",
+      "parsley"
+    ]
+  },
+  {
+    "id": "Italian Sausage and Pepper Sandwich",
+    "cuisine": "italian",
+    "ingredients": [
+      "pimentos",
+      "peppers",
+      "oregano",
+      "olive oil",
+      "garlic",
+      "cheese",
+      "pepper",
+      "cheese",
+      "cheese",
+      "oil",
+      "mushrooms",
+      "olives",
+      "sausages"
+    ]
+  },
+  {
+    "id": "Ground Turkey with Green Beans",
+    "cuisine": "chinese",
+    "ingredients": [
+      "sauce",
+      "ginger",
+      "mustard",
+      "beans",
+      "pepper",
+      "sesame oil",
+      "scallions",
+      "canola oil",
+      "sugar",
+      "wine",
+      "garlic",
+      "turkey",
+      "water",
+      "corn starch"
+    ]
+  },
+  {
+    "id": "Herb-crusted trout",
+    "cuisine": "italian",
+    "ingredients": [
+      "parsley",
+      "walnuts",
+      "pepper",
+      "olive oil",
+      "lemons",
+      "trout",
+      "garlic",
+      "chilis",
+      "salt"
+    ]
+  },
+  {
+    "id": "Steak tacos",
+    "cuisine": "mexican",
+    "ingredients": [
+      "cinnamon",
+      "cilantro",
+      "chilis",
+      "coriander",
+      "salt",
+      "pepper",
+      "garlic",
+      "tomatoes",
+      "avocado",
+      "limes",
+      "steak",
+      "salt",
+      "cumin",
+      "olive oil",
+      "crushed red pepper flakes",
+      "onions"
+    ]
+  },
+  {
+    "id": 31908,
+    "cuisine": "Carbonara Pasta",
+    "ingredients": [
+      "cheese",
+      "butter",
+      "flour",
+      "broth",
+      "chives",
+      "pepper",
+      "bacon",
+      "pasta",
+      "milk",
+      "cooking spray",
+      "salt"
+    ]
+  },
+  {
+    "id": 24717,
+    "cuisine": "Spiced Lentil and Sweet Potato Curry with Tomato and Spinach",
+    "ingredients": [
+      "tumeric",
+      "stock",
+      "tomatoes",
+      "naan",
+      "lentils",
+      "chilis",
+      "onions",
+      "spinach",
+      "sweet potatoes"
+    ]
+  },
+  {
+    "id": "Lemon and Raspberry Yogurt Parfait",
+    "cuisine": "british",
+    "ingredients": [
+      "yogurt",
+      "lemons",
+      "sugar",
+      "raspberries"
+    ]
+  },
+  {
+    "id": "Italian Chicken Salad",
+    "cuisine": "italian",
+    "ingredients": [
+      "seasoning",
+      "chicken",
+      "mayonaise",
+      "italian dressing"
+    ]
+  },
+  {
+    "id": "Thai Sweet and Spicy Chili Lime Sauce",
+    "cuisine": "thai",
+    "ingredients": [
+      "sugar",
+      "chilis",
+      "fish sauce",
+      "limes"
+    ]
+  },
+  {
+    "id": "Vietnamese Chicken and Vegetable Stir-Fry",
+    "cuisine": "vietnamese",
+    "ingredients": [
+      "soy sauce",
+      "vegetable oil",
+      "pepper",
+      "broth",
+      "squash",
+      "garlic",
+      "chilis",
+      "onions",
+      "broccoli",
+      "salt",
+      "limes",
+      "rice",
+      "chicken",
+      "corn starch"
+    ]
+  },
+  {
+    "id": "Thai Peanut Pork and Shrimp Noodles",
+    "cuisine": "thai",
+    "ingredients": [
+      "pork",
+      "peanuts",
+      "cilantro",
+      "hoisin sauce",
+      "peanut butter",
+      "mint",
+      "basil",
+      "rice",
+      "shrimp",
+      "water",
+      "noodles",
+      "bean sprouts"
+    ]
+  },
+  {
+    "id": "Fresh Tomato Salsa",
+    "cuisine": "mexican",
+    "ingredients": [
+      "tomatoes",
+      "salt",
+      "onion",
+      "chilis",
+      "limes",
+      "cilantro"
+    ]
+  },
+  {
+    "id": "Southern Potato Salad",
+    "cuisine": "southern_us",
+    "ingredients": [
+      "mayonnaise",
+      "pepper",
+      "salt",
+      "potatoes",
+      "eggs",
+      "mustard"
+    ]
+  },
+  {
+    "id": "Chinese Sesame Tofu and Broccoli Stir-Fry",
+    "cuisine": "chinese",
+    "ingredients": [
+      "sesame",
+      "peppers",
+      "water",
+      "tofu",
+      "broccoli",
+      "soy sauce",
+      "arrowroot powder",
+      "ginger",
+      "sesame oil",
+      "curry paste"
+    ]
+  },
+  {
+    "id": "Italian Lemon and Olive Pasta with Capers",
+    "cuisine": "italian",
+    "ingredients": [
+      "marinara sauce",
+      "parsley",
+      "olive oil",
+      "pasta",
+      "capers",
+      "pepper",
+      "olives",
+      "lemons",
+      "garlic"
+    ]
+  },
+  {
+    "id": "Chinese Beef Noodle Stir-Fry",
+    "cuisine": "chinese",
+    "ingredients": [
+      "sugar",
+      "noodles",
+      "salt",
+      "broth",
+      "soy sauce",
+      "steak",
+      "bean sprouts",
+      "mushrooms",
+      "pepper",
+      "chives",
+      "oyster sauce",
+      "peanuts",
+      "sesame oil",
+      "cabbage"
+    ]
+  },
+  {
+    "id": "Cajun Creole Mango and Tomato Salsa",
+    "cuisine": "cajun_creole",
+    "ingredients": [
+      "herbs",
+      "lemons",
+      "tomatoes",
+      "paprika",
+      "mango",
+      "stock",
+      "chilis",
+      "onions",
+      "peppers",
+      "oil"
+    ]
+  },
+  {
+    "id": "Creamy Italian Chicken and Mushroom Alfredo Pasta",
+    "cuisine": "italian",
+    "ingredients": [
+      "pepper",
+      "butter",
+      "mushrooms",
+      "sherry",
+      "salt",
+      "cheese",
+      "cream",
+      "spaghetti",
+      "broth",
+      "chicken",
+      "flour"
+    ]
+  },
+  {
+    "id": "Chinese Sweet and Sour Pork Egg Rolls",
+    "cuisine": "chinese",
+    "ingredients": [
+      "pepper",
+      "egg roll wrappers",
+      "sweet and sour sauce",
+      "corn starch",
+      "molasses",
+      "vegetable oil",
+      "oil",
+      "soy sauce",
+      "cabbage",
+      "garlic",
+      "onions",
+      "ginger",
+      "pork",
+      "carrots"
+    ]
+  },
+  {
+    "id": "Breakfast Burritos",
+    "cuisine": "mexican",
+    "ingredients": [
+      "tortillas",
+      "cheese",
+      "sausages",
+      "eggs"
+    ]
+  },
+  {
+    "id": "Cheesy Polenta",
+    "cuisine": "italian",
+    "ingredients": [
+      "corn meal",
+      "water",
+      "butter",
+      "cheese",
+      "salt"
+    ]
+  },
+  {
+    "id": "Cajun Creole Chicken and Sausage Gumbo",
+    "cuisine": "cajun_creole",
+    "ingredients": [
+      "chicken broth",
+      "chicken",
+      "hot sauce",
+      "peppers",
+      "potatoes",
+      "bacon",
+      "garlic",
+      "parsley",
+      "sausage",
+      "cajun seasoning",
+      "peanut oil",
+      "celery",
+      "pepper",
+      "flour",
+      "shrimp",
+      "onions"
+    ]
+  },
+  {
+    "id": "Mexican Red Chili Sauce",
+    "cuisine": "mexican",
+    "ingredients": [
+      "chilis",
+      "red pepper",
+      "garlic",
+      "salt",
+      "cumin",
+      "onions",
+      "oregano",
+      "pepper",
+      "paprika"
+    ]
+  },
+  {
+    "id": "Pad Thai with Chicken and Tofu",
+    "cuisine": "thai",
+    "ingredients": [
+      "eggs",
+      "shallots",
+      "tofu",
+      "bean sprouts",
+      "turnips",
+      "sugar",
+      "vegetable oil",
+      "garlic",
+      "chicken",
+      "fish sauce",
+      "limes",
+      "peanuts",
+      "papaya",
+      "chilis",
+      "pepper",
+      "tamarinds",
+      "chives"
+    ]
+  },
+  {
+    "id": "Italian Tomato and Onion Marinara Sauce",
+    "cuisine": "italian",
+    "ingredients": [
+      "olive oil",
+      "onions",
+      "garlic",
+      "oregano",
+      "onions",
+      "sugar",
+      "basil",
+      "tomatoes"
+    ]
+  },
+  {
+    "id": "Cajun Creole Shrimp and Sausage Jambalaya",
+    "cuisine": "cajun_creole",
+    "ingredients": [
+      "olive oil",
+      "tomatoes",
+      "Sausage",
+      "parsley",
+      "shrimp",
+      "rice",
+      "worcestershire sauce",
+      "hot pepper sauce",
+      "creole seasoning"
+    ]
+  },
+  {
+    "id": "Italian Shrimp and White Bean Bruschetta",
+    "cuisine": "italian",
+    "ingredients": [
+      "olive oil",
+      "bread",
+      "beans",
+      "garlic",
+      "pepper",
+      "shrimp",
+      "sage leaves",
+      "salt"
+    ]
+  },
+  {
+    "id": "Filipino Chicken Adobo with Soy Sauce and Spices",
+    "cuisine": "filipino",
+    "ingredients": [
+      "broth",
+      "oil",
+      "five-spice powder",
+      "ground black pepper",
+      "salt",
+      "sugar",
+      "garlic",
+      "chicken",
+      "soy sauce",
+      "star anise"
+    ]
+  },
+  {
+    "id": "Southern Black-Eyed Pea Dip",
+    "cuisine": "southern_us",
+    "ingredients": [
+      "onions",
+      "cream cheese",
+      "cheese",
+      "cayenne pepper",
+      "chilis",
+      "garlic",
+      "black-eyed peas",
+      "tortilla chips"
+    ]
+  },
+  {
+    "id": "Southern Collard Greens with Ham and Spices",
+    "cuisine": "southern_us",
+    "ingredients": [
+      "collard greens",
+      "olive oil",
+      "ham",
+      "broth",
+      "apple cider",
+      "pepper",
+      "chilis",
+      "bay leaves",
+      "salt",
+      "rib",
+      "brown sugar",
+      "garlic",
+      "cayenne pepper",
+      "onions"
+    ]
+  },
+  {
+    "id": "Italian Ham and Cheese Panini",
+    "cuisine": "italian",
+    "ingredients": [
+      "Ham",
+      "bread",
+      "salami",
+      "giardiniera",
+      "cheese",
+      "pepperoni",
+      "butter",
+      "italian seasoning"
+    ]
+  },
+  {
+    "id": "Mexican Chicken Enchiladas with Picante Sauce and Black Beans",
+    "cuisine": "mexican",
+    "ingredients": [
+      "chicken",
+      "enchilada sauce",
+      "onions",
+      "picante sauce",
+      "peppers",
+      "tortillas",
+      "black beans",
+      "lettuce",
+      "sour cream",
+      "cheese",
+      "garlic",
+      "canola oil"
+    ]
+  },
+  {
+    "id": "Indian Salmon Curry with Cumin, Ginger, and Cilantro",
+    "cuisine": "indian",
+    "ingredients": [
+      "salmon",
+      "onions",
+      "cumin",
+      "cilantro",
+      "salt",
+      "curry powder",
+      "vegetable oil",
+      "chilis",
+      "fresh ginger",
+      "sauce"
+    ]
+  },
+  {
+    "id": "Mexican Chicken and Tomato Salad with Cilantro and Avocado",
+    "cuisine": "mexican",
+    "ingredients": [
+      "tomatoes",
+      "chicken",
+      "cilantro",
+      "vinegar",
+      "chilis",
+      "salt",
+      "pepper",
+      "oil",
+      "avocado",
+      "lettuce",
+      "onions"
+    ]
+  },
+  {
+    "id": "Chinese-Style Orange Cake with Orange Liqueur Glaze",
+    "cuisine": "chinese",
+    "ingredients": [
+      "eggs",
+      "oranges",
+      "water",
+      "orange liqueur",
+      "cake mix",
+      "frosting",
+      "vegetable oil",
+      "sugar"
+    ]
+  },
+  {
+    "id": "French Fennel and Grapefruit Salad",
+    "cuisine": "french",
+    "ingredients": [
+      "sugar",
+      "salt",
+      "fennel",
+      "water",
+      "olive oil",
+      "grapefruits"
+    ]
+  },
+  {
+    "id": "Southern Cornbread with Bacon and Onions",
+    "cuisine": "southern_us",
+    "ingredients": [
+      "sugar",
+      "flour",
+      "vegetable oil",
+      "cornmeal",
+      "baking powder",
+      "onions",
+      "bacon",
+      "buttermilk"
+    ]
+  },
+  {
+    "id": "Southern Crawfish Dip with Cream Cheese and Seasonings",
+    "cuisine": "southern_us",
+    "ingredients": [
+      "butter",
+      "crab",
+      "garlic",
+      "old bay seasoning",
+      "cream cheese",
+      "crawfish",
+      "salt"
+    ]
+  },
+  {
+    "id": "Southern Sweet and Tangy Coleslaw Dressing",
+    "cuisine": "southern_us",
+    "ingredients": [
+      "mayonnaise",
+      "sugar",
+      "pepper",
+      "salt",
+      "white vinegar",
+      "lemons"
+    ]
+  },
+  {
+    "id": "Japanese Steak and Mushroom Stir-Fry with Soy Mirin Sauce",
+    "cuisine": "japanese",
+    "ingredients": [
+      "steak",
+      "mirin",
+      "onions",
+      "soy sauce",
+      "water",
+      "corn oil",
+      "sugar",
+      "onions",
+      "noodles",
+      "sake",
+      "mushrooms",
+      "cabbage"
+    ]
+  },
+  {
+    "id": "Southern Shrimp and Grits with Cheese and Red Pepper Gravy",
+    "cuisine": "southern_us",
+    "ingredients": [
+      "eggs",
+      "whipping cream",
+      "broth",
+      "red pepper",
+      "cheese",
+      "grits",
+      "hot sauce",
+      "pepper",
+      "worcestershire sauce"
+    ]
+  },
+  {
+    "id": "Italian Mussels Marinara with Tomato, Garlic, and Basil",
+    "cuisine": "italian",
+    "ingredients": [
+      "basil",
+      "bay leaves",
+      "red pepper",
+      "mussels",
+      "olive oil",
+      "basil",
+      "garlic",
+      "pepper",
+      "white wine",
+      "salt",
+      "tomatoes",
+      "onion",
+      "pasta",
+      "parsley"
+    ]
+  },
+  {
+    "id": "Southern Cornbread with Honey and Buttermilk",
+    "cuisine": "southern_us",
+    "ingredients": [
+      "sugar",
+      "eggs",
+      "flour",
+      "baking soda",
+      "buttermilk",
+      "honey",
+      "corn oil",
+      "corn meal",
+      "butter",
+      "salt"
+    ]
+  },
+  {
+    "id": "Italian Lemon and Pesto Salmon with White Wine Sauce",
+    "cuisine": "italian",
+    "ingredients": [
+      "lemon",
+      "pesto",
+      "salmon",
+      "white wine"
+    ]
+  },
+  {
+    "id": "Jamaican Beef Patty with Curry and Pickapeppa Sauce",
+    "cuisine": "jamaican",
+    "ingredients": [
+      "bread crumbs",
+      "butter",
+      "onions",
+      "curry",
+      "broth",
+      "pickapeppa sauce",
+      "bay leaves",
+      "garlic",
+      "cayenne pepper",
+      "water",
+      "pepper",
+      "eggs",
+      "olive oil",
+      "onions",
+      "allspice",
+      "white vinegar",
+      "salt",
+      "thyme",
+      "worcestershire sauce",
+      "flour",
+      "beef"
+    ]
+  },
+  {
+    "id": "Japanese Matcha Green Tea and Walnut Pancakes",
+    "cuisine": "japanese",
+    "ingredients": [
+      "butter",
+      "matcha green tea powder",
+      "sugar",
+      "milk",
+      "flour",
+      "eggs",
+      "salt",
+      "baking powder",
+      "walnuts"
+    ]
+  },
+  {
+    "id": "Indian Fenugreek and Urad Dal Potato Curry",
+    "cuisine": "indian",
+    "ingredients": [
+      "salt",
+      "fenugreek",
+      "urad dal",
+      "potatoes",
+      "rice",
+      "vegetable oil"
+    ]
+  },
+
+  {
+    "id": "Irish Colcannon Potatoes with Leeks and Sour Cream",
+    "cuisine": "irish",
+    "ingredients": [
+      "cooking spray",
+      "salt",
+      "pepper",
+      "potatoes",
+      "sour cream",
+      "leeks",
+      "olive oil",
+      "milk"
+    ]
+  },
+  {
+    "id": "Thai Garlic Pepper Chicken",
+    "cuisine": "thai",
+    "ingredients": [
+      "sugar",
+      "chicken",
+      "cooking oil",
+      "fish sauce",
+      "garlic",
+      "pepper"
+    ]
+  },
+  {
+    "id": "Thai Lemongrass Coconut Spare Ribs with Peanut Sauce",
+    "cuisine": "thai",
+    "ingredients": [
+      "lemongrass",
+      "garlic",
+      "rice",
+      "coconut milk",
+      "ginger",
+      "peanut sauce",
+      "spare ribs",
+      "sesame oil",
+      "tamari soy sauce",
+      "brown sugar",
+      "sherry",
+      "water"
+    ]
+  },
+  {
+    "id": "Indian Chicken Curry with Ghee, Tomatoes, and Spices",
+    "cuisine": "indian",
+    "ingredients": [
+      "chicken",
+      "chilis",
+      "ghee",
+      "tomatoes",
+      "ginger",
+      "garlic",
+      "cilantro",
+      "water",
+      "vegetable oil",
+      "onions",
+      "tomatoes",
+      "cumin",
+      "turmeric"
+    ]
+  },
+  {
+    "id": "Jamaican Curry Beef with Spices and Vegetables",
+    "cuisine": "jamaican",
+    "ingredients": [
+      "stock",
+      "curry",
+      "pepper",
+      "beef",
+      "onions",
+      "flour",
+      "bread crumbs",
+      "butter",
+      "garlic",
+      "celery",
+      "water",
+      "tumeric",
+      "dthyme",
+      "ginger",
+      "oil",
+      "tomatoes",
+      "water",
+      "paprika",
+      "salt",
+      "chilis"
+    ]
+  },
+  {
+    "id": "Italian Pork and Tomato Pasta with Rosemary and Garlic",
+    "cuisine": "italian",
+    "ingredients": [
+      "tomatoes",
+      "garlic",
+      "rosemary",
+      "pepper",
+      "onions",
+      "olive oil",
+      "pork",
+      "salt",
+      "pasta"
+    ]
+  },
+  {
+    "id": "Thai Red Curry Tofu with Coconut Milk and Vegetables",
+    "cuisine": "thai",
+    "ingredients": [
+      "tofu",
+      "coconut milk",
+      "basil",
+      "curry paste",
+      "eggplant",
+      "peppers",
+      "vegetable oil",
+      "onions"
+    ]
+  },
+  {
+    "id": "Korean Beef Bibimbap with Rice and Vegetables",
+    "cuisine": "korean",
+    "ingredients": [
+      "rice",
+      "garlic",
+      "scallions",
+      "sugar",
+      "mushrooms",
+      "Gochujang",
+      "bean sprouts",
+      "steak",
+      "sesame",
+      "rice vinegar",
+      "carrots",
+      "soy sauce",
+      "sesame oil",
+      "bok choy"
+    ]
+  },
+  {
+    "id": "French Vanilla Pastry Cream",
+    "cuisine": "french",
+    "ingredients": [
+      "vanilla",
+      "milk",
+      "egg yolks",
+      "sugar",
+      "corn starch"
+    ]
+  },
+  {
+    "id": "French Pumpkin and Orange Cheesecake with Pecans and Marshmallow Topping",
+    "cuisine": "french",
+    "ingredients": [
+      "oranges",
+      "pumpkins",
+      "marshmallows",
+      "pecans",
+      "maple syrup",
+      "innamon",
+      "gingersnap",
+      "nutmeg",
+      "cream cheese"
+    ]
+  },
+  {
+    "id": "Southern Green Beans with Bacon and Brown Sugar Glaze",
+    "cuisine": "southern_us",
+    "ingredients": [
+      "pepper",
+      "sugar",
+      "white vinegar",
+      "salt",
+      "bacon",
+      "brown sugar",
+      "green beans"
+    ]
+  },
+  {
+    "id": "Spanish Ham and Cheese Breakfast Sandwich",
+    "cuisine": "spanish",
+    "ingredients": [
+      "eggs",
+      "ham",
+      "cheese",
+      "butter",
+      "mustard",
+      "bread"
+    ]
+  },
+  {
+    "id": "Indian-inspired Chickpea and Spinach Burger with Cilantro and Sriracha Sauce",
+    "cuisine": "indian",
+    "ingredients": [
+      "bread",
+      "cilantro",
+      "chilis",
+      "garlic",
+      "breadcrumbs",
+      "flour",
+      "pepper",
+      "Sriracha",
+      "chickpeas",
+      "carrots",
+      "flaxseed",
+      "soy sauce",
+      "olive oil",
+      "salt",
+      "lemon juice",
+      "greens",
+      "spinach",
+      "curry",
+      "tahini",
+      "scallions",
+      "onions",
+      "cumin"
+    ]
+  },
+  {
+    "id": "Moroccan Spice Blend with Cloves, Nutmeg, Ginger, and More",
+    "cuisine": "moroccan",
+    "ingredients": [
+      "cloves",
+      "nutmegs",
+      "ginger",
+      "coriander",
+      "cinnamon",
+      "cardamom",
+      "pepper",
+      "cumin"
+    ]
+  },
+  {
+    "id": "Italian Tomato and Red Pepper Bruschetta with Balsamic Vinegar and Basil",
+    "cuisine": "italian",
+    "ingredients": [
+      "tomatoes",
+      "red pepper",
+      "olive oil",
+      "bread",
+      "balsamic vinegar",
+      "onions",
+      "basil",
+      "garlic"
+    ]
+  },
+  {
+    "id": "Italian Sausage and Pepper Pasta with Honey and Cheese",
+    "cuisine": "italian",
+    "ingredients": [
+      "sausage",
+      "pepper",
+      "garlic",
+      "honey",
+      "cheese",
+      "salt",
+      "peppers",
+      "pasta",
+      "olive oil",
+      "red pepper"
+    ]
+  },
+  {
     "id": "Southern-Style Cornbread",
     "cuisine": "southern_us",
     "ingredients": [
@@ -1579,7 +2727,7 @@
       "chicken",
       "tomato sauce",
       "pork",
-      "garlic",
+      "garlic"
     ]
   },
   {
