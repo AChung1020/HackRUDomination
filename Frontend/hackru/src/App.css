@@ -1,48 +1,108 @@
-* {
-  box-sizing: border-box;
-}
 
-body {
-  margin: 0;
-}
 
-.site-title {
-  font-size: 2rem;
-}
-
-/* nav bar */
-.nav {
-  background-color: black;
+.Home {
+  display: flex;
+  background-image: linear-gradient( black, white);
   color: white;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* right half of home page */
+.right-half {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column; 
+  flex: 1;
+  justify-content: center;
   align-items: center;
-  gap: 2rem;
-  padding: 0 1rem;
+  border-right: 2px solid white;
 }
 
-.nav ul {
-   padding: 0;
-   margin: 0;
-   list-style: none;
-   display: flex;
-   gap: 1rem;
-}
-
-.nav a {
-  color: inherit;
-  text-decoration: none;
-  height: 100%;
+.right-half form {
   display: flex;
+  flex-direction: column; 
+  flex: 1;
+  justify-content: center;
   align-items: center;
-  padding: .25rem;
-
+  max-width: 50%;
+  max-height: 50%;
 }
 
-.nav li.active {
-  color: #777;
+.right-half h2 {
+ margin-bottom: 10px;
 }
 
-.nav li:hover {
-  background-color: #777;
+.right-half input {
+  margin-left: 100px;
+}
+
+.Home button {
+  display: block;
+  background-color: black;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  color: #000000;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+}
+
+/* left half of home page */
+.left-half {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-half h1 {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* vitamins page */
+
+.background {
+  background-image: linear-gradient( black, white);
+}
+.vitamin-container {
+  width: 50%; /* Adjust this to make the container's width smaller or larger */
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.vitamin-listing {
+  border: 1px solid #ddd;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  color: black;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.vitamin-listing h2 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.food-list {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.food-list li {
+  margin-bottom: 5px;
 }

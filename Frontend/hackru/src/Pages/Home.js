@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {useTypewriter, Cursor } from 'react-simple-typewriter';
 
 
 function Home() {
@@ -48,12 +49,31 @@ function Home() {
         
     };
 
+    const [welcome]  = useTypewriter({
+        words: ['Welcome to _____'],
+        typeSpeed: 120
+    })
 
-    return (<div>
-        <form onSubmit = { handleUpload }>
-            <input type = 'file' name = 'picture' onChange={handleFile}/>
-            <button onClick={ routeChangeLogin } >Submit</button>
-        </form>
+
+    return (<div className='Home'>
+        <div className='left-half'>
+            <h1> {welcome} 
+            <span style={{ color: 'white'}}>
+                <Cursor cursortStyle = '|'/>
+            </span>
+            </h1>
+        </div>
+        
+        <div className='right-half'>
+            <h1> Find out what you are missing in your diet!!! :D</h1>
+            <form onSubmit = { handleUpload }>
+                <React.Fragment>
+                <h2>What's in your Fridge?</h2>
+                <input type = 'file' onChange={handleFile}/>
+                </React.Fragment>
+                <button onClick={ routeChangeLogin } >Submit</button>
+            </form>
+        </div>
         
         </div>)
 }
