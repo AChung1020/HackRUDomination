@@ -4,33 +4,36 @@ import csv
 
 class readingData:
 
-    def __init__(self, recipesDataset, ingredientsDataset, currentIngredients):
-        self.recipesDF = pd.read_csv(recipesDataset)
-        self.ingredientsDF = pd.read_csv(ingredientsDataset)
+    def __init__(self, currentIngredients):
+
+        self.nutrients = pd.read_csv('nutrients_csvfile.csv')
+        self.allIngredientsInARecipe = pd.read_pickle('allIngredientsInARecipe.pkl')
+        self.actual_ingredients = pd.read_pickle('actual_ingredients.pkl')
+        self.ingredientsToRecipes = pd.read_pickle('ingredientsToRecipes.pkl')
+        self.recipe_map = pd.read_pickle('recipe_map.pkl')
         self.currentIngredients = currentIngredients
         self.nutritionallyDenseFoods = defaultdict(list)
         self.recipesWithFoods = defaultdict(list)
-        self.recipes = {}
+        self.ingredientMap = {}
+        for i in self.currentIngredients:
+            self.ingredientMap[i] = 1
 
     def getNutritonalInformation(self):
-        currentIngredientsMap = {}
-        for i in self.currentIngredients:
-            currentIngredientsMap[i] = 1
         
         information = [0 for i in range(6)]
         
         # Get all the recipes that contain the current ingredients
-        for name, data in self.recipesDF.iterrows():
-            currIngredient = data['food']
-            if currIngredient not in currentIngredientsMap:
+        for name, data in self.nutrients.iterrows():
+            currIngredient = data['Food']
+            if currIngredient not in self.ingredientMap:
                 continue
             else:
-                information[0] += data['calories']
-                information[1] += data['protein']
-                information[2] += data['fat']
-                information[3] += data['Sat.fat']
-                information[4] += data['Fiber']
-                information[5] += data['Carbs']
+                information[0] += float(data['Calories'])
+                information[1] += float(data['Protein'])
+                information[2] += float(data['Fat'])
+                information[3] += float(data['Sat.Fat'])
+                information[4] += float(data['Fiber'])
+                information[5] += float(data['Carbs'])
         
         return information
     
@@ -79,6 +82,9 @@ class readingData:
         populateVitamins()
 
     def determineAreasToImprove(self):
+
+        # Edit this to return the areas to improve
+
         information = self.getNutritonalInformation()
         areasToImprove = []
         if information[1] < 50:
@@ -94,12 +100,25 @@ class readingData:
         return areasToImprove
     
     def populateRecipes(self):
-        for name, data in self.recipesDF.iterrows():
-            currIngredient = data['food']
-            self.recipesWithFoods[currIngredient].append(data['recipe'])
+
+        # return recipes with the current ingredients
+
+        possibleRecipes = []
+
+        for i in self.allIngredientsInARecipe.keys():
+            data = self.allIngredientsInARecipe[i]
+            total = 0
+            for j in data:
+                if j in self.ingredientMap:
+                    total += 1
+            if total >= len(data) - 1 or (total / len(data)) > 0.8:
+                possibleRecipes.append(i)
+        
+        return possibleRecipes
 
 
-    
+readingData = readingData(['chicken', 'Rice', 'Broccoli'])
+print(readingData.getNutritonalInformation())
 
 
 
