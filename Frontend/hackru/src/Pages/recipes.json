@@ -1,0 +1,44 @@
+{
+    "Spaghetti Carbonara": [
+      "Spaghetti",
+      "Eggs",
+      "Parmesan cheese",
+      "Guanciale or Pancetta",
+      "Black pepper",
+      "Salt",
+      "Garlic"
+    ],
+    "Chicken Curry": [
+      "Chicken breasts or thighs",
+      "Onions",
+      "Garlic",
+      "Ginger",
+      "Tomatoes",
+      "Curry powder",
+      "Coconut milk",
+      "Coriander leaves",
+      "Salt",
+      "Chili pepper (optional)"
+    ],
+    "Guacamole": [
+      "Avocados",
+      "Lime juice",
+      "Tomatoes",
+      "Onion",
+      "Cilantro",
+      "Garlic",
+      "Salt",
+      "Jalapeno (optional)"
+    ],
+    "Pancakes": [
+      "All-purpose flour",
+      "Baking powder",
+      "Salt",
+      "Sugar",
+      "Eggs",
+      "Milk",
+      "Unsalted butter",
+      "Maple syrup or honey (for serving)"
+    ]
+  }
+  

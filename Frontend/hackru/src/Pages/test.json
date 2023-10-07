@@ -1,0 +1,12 @@
+{
+    "Vitamins": {
+      "A": ["Carrots", "Sweet Potatoes", "Kale"],
+      "B": ["Whole Grains", "Beans", "Bananas"],
+      "C": ["Oranges", "Strawberries", "Bell Peppers"],
+      "D": ["Salmon", "Mushrooms", "Eggs"],
+      "E": ["Almonds", "Spinach", "Avocado"],
+      "K": ["Broccoli", "Brussels Sprouts", "Kale"],
+      "Omega": ["Flaxseed", "Walnuts", "Chia Seeds"]
+    }
+  }
+  
