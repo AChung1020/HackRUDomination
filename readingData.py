@@ -25,67 +25,67 @@ class readingData:
 
     def getNutritonalInformation(self):
         
-        information = [0 for i in range(6)]
+        information = [0 for element in range(len(self.nutritionallyDenseFoods))]
+
+        val = "Data.Alpha Carotene,Data.Ash,Data.Beta Carotene,Data.Beta Cryptoxanthin,Data.Carbohydrate,Data.Cholesterol,Data.Choline,Data.Fiber,Data.Kilocalories,Data.Lutein and Zeaxanthin,Data.Lycopene,Data.Manganese,Data.Niacin,Data.Pantothenic Acid,Data.Protein,Data.Refuse Percentage,Data.Retinol,Data.Riboflavin,Data.Selenium,Data.Sugar Total,Data.Thiamin,Data.Water,Data.Fat.Monosaturated Fat,Data.Fat.Polysaturated Fat,Data.Fat.Saturated Fat,Data.Fat.Total Lipid,Data.Household Weights.1st Household Weight,Data.Household Weights.1st Household Weight Description,Data.Household Weights.2nd Household Weight,Data.Household Weights.2nd Household Weight Description,Data.Major Minerals.Calcium,Data.Major Minerals.Copper,Data.Major Minerals.Iron,Data.Major Minerals.Magnesium,Data.Major Minerals.Phosphorus,Data.Major Minerals.Potassium,Data.Major Minerals.Sodium,Data.Major Minerals.Zinc,Data.Vitamins.Vitamin A - IU,Data.Vitamins.Vitamin A - RAE,Data.Vitamins.Vitamin B12,Data.Vitamins.Vitamin B6,Data.Vitamins.Vitamin C,Data.Vitamins.Vitamin E,Data.Vitamins.Vitamin K"
+
+        val = val.split(",")
         
         # Get all the recipes that contain the current ingredients
+
+        keys = self.nutritionallyDenseFoods.keys()
 
         for name, data in self.nutrients.iterrows():
             currIngredient = data['Category']
             if currIngredient not in self.ingredientMap:
                 continue
             else:
-                information[0] += float(data['Calories'])
-                information[1] += float(data['Protein'])
-                information[2] += float(data['Fat'])
-                information[3] += float(data['Sat.Fat'])
-                information[4] += float(data['Fiber'])
-                information[5] += float(data['Carbs'])
-        
+                information[0] += float(data[val[0]])
+                information[1] += float(data[val[1]])
+                information[2] += float(data[val[2]])
+                information[3] += float(data[val[3]])
+                information[4] += float(data[val[4]])
+                information[5] += float(data[val[5]])
+                information[6] += float(data[val[6]])
+                information[7] += float(data[val[7]])
+                information[8] += float(data[val[8]])
+                information[9] += float(data[val[9]])
+                information[10] += float(data[val[10]])
+                information[11] += float(data[val[11]])
+                information[12] += float(data[val[12]])
+                information[13] += float(data[val[13]])
+                information[14] += float(data[val[14]])
+                information[15] += float(data[val[15]])
+                information[16] += float(data[val[16]])
+                information[17] += float(data[val[17]])
+                information[18] += float(data[val[18]])
+                information[19] += float(data[val[19]])
+                information[20] += float(data[val[20]])
+                information[21] += float(data[val[21]])
+                information[22] += float(data[val[22]])
+                information[23] += float(data[val[23]])
+                information[24] += float(data[val[24]])
+                information[25] += float(data[val[25]])
+                information[26] += float(data[val[26]])
+                information[27] += float(data[val[27]])
+                information[28] += float(data[val[28]])
+                information[29] += float(data[val[29]])
+                information[30] += float(data[val[30]])
+                information[31] += float(data[val[31]])
+                information[32] += float(data[val[32]])
+                information[33] += float(data[val[33]])
+                information[34] += float(data[val[34]])
+                information[35] += float(data[val[35]])
+                information[36] += float(data[val[36]])
+                information[37] += float(data[val[37]])
+                information[38] += float(data[val[38]])
+                information[39] += float(data[val[39]])
+                information[40] += float(data[val[40]])
+                information[41] += float(data[val[41]])
+                information[42] += float(data[val[42]])
+                information[43] += float(data[val[43]])
+                information[44] += float(data[val[44]])
         return information
-    
-    def populateNutritionallyDenseFoods(self):
-        
-        def populateProtein():
-            self.nutritionallyDenseFoods["protein"].append("chicken")
-            self.nutritionallyDenseFoods["protein"].append("beef")
-            self.nutritionallyDenseFoods["protein"].append("pork")
-            self.nutritionallyDenseFoods["protein"].append("fish")
-            self.nutritionallyDenseFoods["protein"].append("egg")
-            self.nutritionallyDenseFoods["protein"].append("tofu")
-            self.nutritionallyDenseFoods["protein"].append("beans")
-            
-        def populateCarbs():
-            self.nutritionallyDenseFoods["carbs"].append("rice")
-            self.nutritionallyDenseFoods["carbs"].append("bread")
-            self.nutritionallyDenseFoods["carbs"].append("pasta")
-            self.nutritionallyDenseFoods["carbs"].append("potato")
-            self.nutritionallyDenseFoods["carbs"].append("corn")
-
-        def populateFiber():
-            self.nutritionallyDenseFoods["fiber"].append("broccoli")
-            self.nutritionallyDenseFoods["fiber"].append("spinach")
-            self.nutritionallyDenseFoods["fiber"].append("carrots")
-            self.nutritionallyDenseFoods["fiber"].append("kale")
-            self.nutritionallyDenseFoods["fiber"].append("avocado")
-
-        def populateVitamins():
-            self.nutritionallyDenseFoods["vitamins"].append("orange")
-            self.nutritionallyDenseFoods["vitamins"].append("apple")
-            self.nutritionallyDenseFoods["vitamins"].append("banana")
-            self.nutritionallyDenseFoods["vitamins"].append("grapes")
-        
-        def populateFats():
-            self.nutritionallyDenseFoods["fats"].append("avocado")
-            self.nutritionallyDenseFoods["fats"].append("cheese")
-            self.nutritionallyDenseFoods["fats"].append("nuts")
-            self.nutritionallyDenseFoods["fats"].append("olive oil")
-
-        populateCarbs()
-        populateFats()
-        populateFiber()
-        populateFats()
-        populateProtein()
-        populateVitamins()
 
     def determineAreasToImprove(self):
 
