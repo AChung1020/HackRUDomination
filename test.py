@@ -2,6 +2,7 @@ import pandas as pd
 from collections import defaultdict
 import json
 
+
 def test():
 
     # map = checkOpen()
@@ -26,7 +27,6 @@ def test():
     #     print(recipesWithIngredients[Id])
 
     # pd.to_pickle(IDToIngredient, 'IDToIngredient.pkl')
-
 
     # for i in ingredients:
     #     # if i not in ingredientMap:
@@ -55,24 +55,24 @@ def test():
                     recipesIngredients[recipeId].append(ingredientMap[k])
     pd.to_pickle(recipesIngredients, 'allIngredientsInARecipe.pkl')
 
-
-
     # ingredientMap = pd.read_pickle(file)
 
     # actualIngredients = {}
 
     # for i, data in ingredientMap.iterrows():
     #     actualIngredients[data['id']] = data['raw_ingr']
-    
+
     # pd.to_pickle(actualIngredients, 'actual_ingredients.pkl')
     # df = pd.read_csv('PP_recipes.csv')
 
     # print(df.head(5))
 
+
 def checkOpen():
     file = open('actual_ingredients.pkl', 'rb')
     value = pd.read_pickle(file)
     return value
+
 
 def returnRecipes(currentIngredients):
     possibleRecipes = []
@@ -92,28 +92,26 @@ def returnRecipes(currentIngredients):
                 break
         if (total >= len(data)) or (total / len(data)) > 0.8:
             possibleRecipes.append(recipeMap[i])
-    
+
     return possibleRecipes
+
 
 def test2():
 
     recipeMap = pd.read_pickle('recipe_map.pkl')
 
 
-
-        
-
 # def getNutritonalInformation(currentIngredients):
 
 #     nutrients = pd.read_csv('food.csv')
 
 #     ingredientMap = {}
-    
+
 #     for i in currentIngredients:
 #         ingredientMap[i.upper()] = 1
 
 #     information = [0 for i in range(50)]
-    
+
 #     # Get all the recipes that contain the current ingredients
 #     for name, data in nutrients.iterrows():
 #         currIngredient = data['Category']
@@ -126,14 +124,14 @@ def test2():
 #             information[3] += float(data['Data.Beta Cryptoxanthin'])
 #             information[4] += float(data['Data.Carbohydrate'])
 #             information[5] += float(data['Carbs'])
-    
+
 #     return information
 
 # getNutritonalInformation(["chicken", "eggs", "milk", "yogurt", "squash"])
 
 def getBestNutrients():
 
-    val = "Data.Alpha Carotene","Data.Ash","Data.Beta Carotene","Data.Beta Cryptoxanthin","Data.Carbohydrate","Data.Cholesterol","Data.Choline","Data.Fiber","Data.Kilocalories","Data.Lutein and Zeaxanthin","Data.Lycopene","Data.Manganese","Data.Niacin","Data.Pantothenic Acid","Data.Protein","Data.Refuse Percentage","Data.Retinol","Data.Riboflavin","Data.Selenium","Data.Sugar Total","Data.Thiamin","Data.Water","Data.Fat.Monosaturated Fat","Data.Fat.Polysaturated Fat","Data.Fat.Saturated Fat","Data.Fat.Total Lipid","Data.Household Weights.1st Household Weight","Data.Household Weights.1st Household Weight Description","Data.Household Weights.2nd Household Weight","Data.Household Weights.2nd Household Weight Description","Data.Major Minerals.Calcium","Data.Major Minerals.Copper","Data.Major Minerals.Iron","Data.Major Minerals.Magnesium","Data.Major Minerals.Phosphorus","Data.Major Minerals.Potassium","Data.Major Minerals.Sodium","Data.Major Minerals.Zinc","Data.Vitamins.Vitamin A - IU","Data.Vitamins.Vitamin A - RAE","Data.Vitamins.Vitamin B12","Data.Vitamins.Vitamin B6","Data.Vitamins.Vitamin C","Data.Vitamins.Vitamin E","Data.Vitamins.Vitamin K"
+    val = "Data.Alpha Carotene", "Data.Ash", "Data.Beta Carotene", "Data.Beta Cryptoxanthin", "Data.Carbohydrate", "Data.Cholesterol", "Data.Choline", "Data.Fiber", "Data.Kilocalories", "Data.Lutein and Zeaxanthin", "Data.Lycopene", "Data.Manganese", "Data.Niacin", "Data.Pantothenic Acid", "Data.Protein", "Data.Refuse Percentage", "Data.Retinol", "Data.Riboflavin", "Data.Selenium", "Data.Sugar Total", "Data.Thiamin", "Data.Water", "Data.Fat.Monosaturated Fat", "Data.Fat.Polysaturated Fat", "Data.Fat.Saturated Fat", "Data.Fat.Total Lipid", "Data.Household Weights.1st Household Weight", "Data.Household Weights.1st Household Weight Description", "Data.Household Weights.2nd Household Weight", "Data.Household Weights.2nd Household Weight Description", "Data.Major Minerals.Calcium", "Data.Major Minerals.Copper", "Data.Major Minerals.Iron", "Data.Major Minerals.Magnesium", "Data.Major Minerals.Phosphorus", "Data.Major Minerals.Potassium", "Data.Major Minerals.Sodium", "Data.Major Minerals.Zinc", "Data.Vitamins.Vitamin A - IU", "Data.Vitamins.Vitamin A - RAE", "Data.Vitamins.Vitamin B12", "Data.Vitamins.Vitamin B6", "Data.Vitamins.Vitamin C", "Data.Vitamins.Vitamin E", "Data.Vitamins.Vitamin K"
 
     val.split(",")
 
@@ -245,19 +243,23 @@ def getBestNutrients():
 
     nutrients.sort_values(by=[val[26]], inplace=True, ascending=False)
 
-    HouseholdWeights1stHouseholdWeight = nutrients['Category'].head(10).tolist()
+    HouseholdWeights1stHouseholdWeight = nutrients['Category'].head(
+        10).tolist()
 
     nutrients.sort_values(by=[val[27]], inplace=True, ascending=False)
 
-    HouseholdWeights1stHouseholdWeightDescription = nutrients['Category'].head(10).tolist()
+    HouseholdWeights1stHouseholdWeightDescription = nutrients['Category'].head(
+        10).tolist()
 
     nutrients.sort_values(by=[val[28]], inplace=True, ascending=False)
 
-    HouseholdWeights2ndHouseholdWeight = nutrients['Category'].head(10).tolist()
+    HouseholdWeights2ndHouseholdWeight = nutrients['Category'].head(
+        10).tolist()
 
     nutrients.sort_values(by=[val[29]], inplace=True, ascending=False)
 
-    HouseholdWeights2ndHouseholdWeightDescription = nutrients['Category'].head(10).tolist()
+    HouseholdWeights2ndHouseholdWeightDescription = nutrients['Category'].head(
+        10).tolist()
 
     nutrients.sort_values(by=[val[30]], inplace=True, ascending=False)
 
