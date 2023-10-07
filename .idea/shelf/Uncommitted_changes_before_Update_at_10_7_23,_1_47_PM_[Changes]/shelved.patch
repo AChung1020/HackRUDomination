@@ -1,0 +1,128 @@
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+new file mode 100644
+--- /dev/null	(date 1696694799361)
++++ b/.idea/modules.xml	(date 1696694799361)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/.idea/HackRUDomination.iml" filepath="$PROJECT_DIR$/.idea/HackRUDomination.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/HackRUDomination.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/HackRUDomination.iml b/.idea/HackRUDomination.iml
+new file mode 100644
+--- /dev/null	(date 1696694799354)
++++ b/.idea/HackRUDomination.iml	(date 1696694799354)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="PYTHON_MODULE" version="4">
++  <component name="NewModuleRootManager">
++    <content url="file://$MODULE_DIR$" />
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1696694799371)
++++ b/.idea/misc.xml	(date 1696694799371)
+@@ -0,0 +1,4 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.10" project-jdk-type="Python SDK" />
++</project>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1696694799384)
++++ b/.idea/vcs.xml	(date 1696694799384)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/inspectionProfiles/profiles_settings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/inspectionProfiles/profiles_settings.xml b/.idea/inspectionProfiles/profiles_settings.xml
+new file mode 100644
+--- /dev/null	(date 1696694799379)
++++ b/.idea/inspectionProfiles/profiles_settings.xml	(date 1696694799379)
+@@ -0,0 +1,6 @@
++<component name="InspectionProjectProfileManager">
++  <settings>
++    <option name="USE_PROJECT_PROFILE" value="false" />
++    <version value="1.0" />
++  </settings>
++</component>
+\ No newline at end of file
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+new file mode 100644
+--- /dev/null	(date 1696694799513)
++++ b/.idea/.gitignore	(date 1696694799513)
+@@ -0,0 +1,8 @@
++# Default ignored files
++/shelf/
++/workspace.xml
++# Editor-based HTTP Client requests
++/httpRequests/
++# Datasource local storage ignored files
++/dataSources/
++/dataSources.local.xml
+Index: spry-compound-401316-88f942825447.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/spry-compound-401316-88f942825447.json b/spry-compound-401316-88f942825447.json
+new file mode 100644
+--- /dev/null	(date 1696700766185)
++++ b/spry-compound-401316-88f942825447.json	(date 1696700766185)
+@@ -0,0 +1,13 @@
++{
++  "type": "service_account",
++  "project_id": "spry-compound-401316",
++  "private_key_id": "88f94282544783bd1cc523fd922a821a7d178fe2",
++  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDkKnJNxio6oKEb\naCFC3YyGx8VnYB8ljVoyZHug+9uBXooagdXZo9MQB3YwqPrVC6IwjTsPrEuejVOr\nX4lvvBff8MtvQA++Ws82YaDLtc2ROnJ42eAMn3MrDg38yIZPyX8sdqYn2XhQp/nu\nYuCOzZ2UtYeF6zgeyQB3/HylqytoB1tAOubleSRTagLrTcqUUTb2tocH22BZcV5e\nzhwWYJ0I7bRES8RqKQnJ/GzTvZcOkHlxgGYyM4pvtptQCY72Jdr+DCzLI00CIqNB\nPrx5jv9Ka2au1D4M4Yh6Kw6M7ATn6RtfU/JbENxFyD8l1HRBzPfFtoD7pO96J2nO\nZoxrAltrAgMBAAECggEAOIrwUqfGNUszQah3fauLtKbzG6Atd8/kx1IxdP6VMiUs\nkk8UoN/BYVqIBp0JtBwy8Fc/iK3I+5zIXFLLq13wiLWSpJo6jJDSgwaEo5cFP3U9\ngwdzR42IK+ZKvxcueb1Uf79Tg9KXx10pSdNFFP6Ni5nE4QIeoTpsnE980E1v71JT\nh3E5cmdDD844TSLEMBQa2AMD+aMLovvD6aoBDSPaCccZJg39kvTxQwyVXBTfcvHS\nqduoQFEbQQNW3q3mibkKqdcU5RFNkhLHxu4SnmeWpxIrwdi1HYGDacDZdwLPJRKx\nPsmVsMNEX3pm/ok9/807qPve2HZKKfoUgTBSrK1woQKBgQD52sv/zEhm/TykTWkL\nxIKcrexBDluTS7gxuCjCkM9+7i1GlSUDP99mPVMuk3NO/wr01t0RaCdH6aVBdULx\nxBjvTvG+9072rV3xYH4mUNZELUeAHldcvirtWZSw9JXQaMb8dtIZRBpaErKZGJBI\n/cwo8e671xj93xbc4Z9VdeLfOwKBgQDpxxYVFW1/OyPU4LXEjUC5lkPx4wF1qlmH\nW5oBT+WWIGiFj+RaSJ9aMMiSniMKQimUv/2B1s9YId8aDCHQGUtJfSvh4oxvHqZe\nuBpcjhptLFqZeCipSK6dmQp0GzF913wu3j+bKzfv2Rl8vTRVvr4f/EASoFgDEQMc\n+ZB5MR0RkQKBgDGw7CWBkVy6PJdItf2bJYbXqEb//gJ7arSotaKMflf2Mpb5DpVo\n3JtO0v5OYP5zBtDO8sSFfFp3A2DTW28N2w+tGbMrKE8zB5373Nrt9M82WiQG5MUT\nJSJzUHkpC6qZTAnl778KplsHoPGFyxxZLYNvKlW9X8EN31Qqoy+x9F8FAoGBAKAJ\n05sxZRlhoiD8iFL7JCEotnDkJ76mlM2uLtrRGGnS29r7a6dG6hgzJ0wACBrguliD\nqod1R9KctX++aHNurXSsxRrJHbyAbgKP5DQScBLm90ry0Fs7T5bCCz760sHEf9YR\n/dc7GfsPU3xqhmZgwwVgiXh23mmS/t+aFYZx0eWRAoGAFq/qgifn6ffh6bGqLId+\nVnsjjYX5c58mlZcKa6OR/jZVt9WEgRIs+zZJIpqm/HJ82hXRptT60+CHXf+SaGYW\nsue9MGcTiUPmBAzT8C/aYqqdbHvJji0qMFNjrB1mR8jBbAxk9jOOPWwSdJc/uofl\n6Ug6TCNfJba2Lu6XSphWG8c=\n-----END PRIVATE KEY-----\n",
++  "client_email": "test-creds@spry-compound-401316.iam.gserviceaccount.com",
++  "client_id": "106969365862847485322",
++  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
++  "token_uri": "https://oauth2.googleapis.com/token",
++  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
++  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/test-creds%40spry-compound-401316.iam.gserviceaccount.com",
++  "universe_domain": "googleapis.com"
++}
