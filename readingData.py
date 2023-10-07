@@ -17,6 +17,7 @@ class readingData:
         self.ingredientMap = {}
         for i in self.currentIngredients:
             self.ingredientMap[i] = 1
+        
 
     def getNutritonalInformation(self):
         
