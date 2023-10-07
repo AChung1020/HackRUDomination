@@ -6,17 +6,21 @@ class readingData:
 
     def __init__(self, currentIngredients):
 
-        self.nutrients = pd.read_csv('nutrients_csvfile.csv')
+        # self.nutrients = pd.read_csv('nutrients_csvfile.csv')
         self.allIngredientsInARecipe = pd.read_pickle('allIngredientsInARecipe.pkl')
         self.actual_ingredients = pd.read_pickle('actual_ingredients.pkl')
         self.ingredientsToRecipes = pd.read_pickle('ingredientsToRecipes.pkl')
         self.recipe_map = pd.read_pickle('recipe_map.pkl')
+        self.nutrients = pd.read_csv('food.csv')
         self.currentIngredients = currentIngredients
-        self.nutritionallyDenseFoods = defaultdict(list)
+
+        self.nutritionallyDenseFoods = pd.read_pickle('nutrientMap.pkl')
+
+        # self.nutritionallyDenseFoods = defaultdict(list)
         self.recipesWithFoods = defaultdict(list)
         self.ingredientMap = {}
         for i in self.currentIngredients:
-            self.ingredientMap[i] = 1
+            self.ingredientMap[i.upper()] = 1
         
 
     def getNutritonalInformation(self):
@@ -24,8 +28,9 @@ class readingData:
         information = [0 for i in range(6)]
         
         # Get all the recipes that contain the current ingredients
+
         for name, data in self.nutrients.iterrows():
-            currIngredient = data['Food']
+            currIngredient = data['Category']
             if currIngredient not in self.ingredientMap:
                 continue
             else:
@@ -118,8 +123,8 @@ class readingData:
         return possibleRecipes
 
 
-readingData = readingData(['chicken', 'Rice', 'Broccoli'])
-print(readingData.getNutritonalInformation())
+# readingData = readingData(['chicken', 'Rice', 'Broccoli'])
+# print(readingData.getNutritonalInformation())
 
 
 
