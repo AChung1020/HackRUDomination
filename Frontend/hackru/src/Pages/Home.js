@@ -4,14 +4,15 @@ import {useTypewriter, Cursor } from 'react-simple-typewriter';
 
 const S3_BUCKET ='YOUR_BUCKET_NAME';
 const REGION ='YOUR_REGION_NAME';
-const ACCESS_KEY ='YOUR_ACCESS_KEY';
-const SECRET_ACCESS_KEY ='YOUR_SECRET_ACCESS_KEY';
+const ACCESS_KEY ="AKIASXA4X4ZE7TLPOTB6";
+const SECRET_ACCESS_KEY ="xw+CwEvyFUwTEzdKXJC1W4kBz1I/LEwZnCqdN+IN";
 
 const config = {
     bucketName: S3_BUCKET,
     region: REGION,
     accessKeyId: ACCESS_KEY,
     secretAccessKey: SECRET_ACCESS_KEY,
+
 }
 
 function Home() {
