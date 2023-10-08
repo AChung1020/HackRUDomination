@@ -35,7 +35,7 @@ function Home() {
         formData.append('file', file)
         
         if(file != null) {
-            fetch('url',  //change to URL of API later
+            fetch('http://localhost:5000/imageRetrieval',  //change to URL of API later
             {  method: 'POST',
             body: formData
             }).then((response) => response.json())
@@ -71,7 +71,7 @@ function Home() {
                 <h2>What's in your Fridge?</h2>
                 <input type = 'file' onChange={handleFile}/>
                 </React.Fragment>
-                <button onClick={ routeChangeLogin } >Submit</button>
+                <button  >Submit</button>
             </form>
         </div>
         
