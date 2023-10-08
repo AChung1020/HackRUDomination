@@ -71,7 +71,7 @@ function Home() {
                 <h2>What's in your Fridge?</h2>
                 <input type = 'file' onChange={handleFile}/>
                 </React.Fragment>
-                <button onClick={ routeChangeLogin } >Submit</button>
+                <button  >Submit</button>
             </form>
         </div>
         

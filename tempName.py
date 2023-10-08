@@ -7,8 +7,8 @@ from foodRecognition import determineOutcomes
 import readingData
 
 app = Flask(__name__)
-CORS(app)
-
+# CORS(app, resources={r"/*": {"origins": "http://localhost:3000", "http://localhost:5000"}})
+CORS(app, origins=["http://localhost:3000", "http://localhost:5000"])
 ingredientsData = None
 
 @app.route('/data', methods={'GET'})
@@ -18,10 +18,11 @@ def get_data():
 @app.route('/imageRetrieval', methods={'POST'})
 def getImage():
     imageURL = request.data
-    values = determineOutcomes(imageURL)
+    # values = determineOutcomes(imageURL)
+    print(imageURL)
     # Figure out what values returns as
-    ingredientsData = readingData(values)
-    return f"Received your image!"
+    # ingredientsData = readingData(values)
+    return jsonify("Received your image!")
 
 @app.route('/valuesRetrieval', methods={'POST'})
 def getValues():
@@ -39,6 +40,7 @@ def get_nutritionalInformation():
 @app.route('/necessaryVitamins', methods = {'GET'})
 def get_vitamins():
     value = jsonify(ingredientsData.determineAreasToImprove())
+    # return value
 
 
 @app.route('/possibleRecipes', methods = {'GET'})
