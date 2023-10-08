@@ -4,7 +4,7 @@ from flask_cors import CORS
 
 from foodRecognition import determineOutcomes
 
-import readingData
+from readingData import readingData
 
 import os
 
@@ -15,8 +15,8 @@ filePath = os.path.expanduser(".aws/credentials")
 config = configparser.ConfigParser()
 config.read(filePath)
 
-os.environ["AWS_ACCESS_KEY_ID"] = config.get("default", "aws_access_key_id")
-os.environ["AWS_SECRET_ACCESS_KEY"] = config.get("default", "lMSYln/abaT84ml/2cBMaPYXVr/h7bMiZvgltl8Z")
+# os.environ["AWS_ACCESS_KEY_ID"] = config.get("default", "aws_access_key_id")
+# os.environ["AWS_SECRET_ACCESS_KEY"] = config.get("default", "lMSYln/abaT84ml/2cBMaPYXVr/h7bMiZvgltl8Z")
 
 app = Flask(__name__)
 # CORS(app, resources={r"/*": {"origins": "http://localhost:3000", "http://localhost:5000"}})
@@ -30,9 +30,11 @@ def get_data():
 @app.route('/imageRetrieval', methods={'POST'})
 def getImage():
     imageURL = request.data
-    values = determineOutcomes(imageURL)
+    print(type(imageURL))
+    # values = determineOutcomes(imageURL.decode("utf-8"))
+    ingredientsData = readingData(["apple", "banana", "orange"])
     print(imageURL)
-    print(values)
+    # print(values)
     # Figure out what values returns as
     # ingredientsData = readingData(values)
     return jsonify("Received your image!")
