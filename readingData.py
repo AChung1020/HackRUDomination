@@ -26,6 +26,9 @@ class readingData:
         self.nutritionallyDenseFoods = pd.read_pickle('nutrientMap.pkl')
         self.bestIngredientRecipes = pd.read_pickle(
             "bestIngredientsRecipes.pkl")
+        
+        print(self.bestIngredientRecipes['BREAD'])
+
         self.actualNamesOfVitamins = pd.read_pickle(
             "actualNamesOfVitamins.pkl")
 
@@ -285,7 +288,6 @@ class readingData:
             # print(areasToImprove[i])
             # print(self.actualNamesOfVitamins[areasToImprove[i]])
             ingredients = self.nutritionallyDenseFoods[areasToImprove[i]]
-            print(ingredients)
             for j in ingredients:
                 if len(recipes[i]) > 2:
                     break
