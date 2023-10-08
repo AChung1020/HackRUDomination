@@ -25,12 +25,6 @@ class readingData:
                               "olive oil": 1, "flour": 1, "sugar": 1, "soy sauce": 1, "vinegar": 1}
 
         self.nutritionallyDenseFoods = pd.read_pickle('nutrientMap.pkl')
-<<<<<<< HEAD
-        self.bestIngredientRecipes = pd.read_pickle(
-            "bestIngredientsRecipes.pkl")
-        self.actualNamesOfVitamins = pd.read_pickle(
-            "actualNamesOfVitamins.pkl")
-=======
         self.bestIngredientRecipes = pd.read_pickle("bestIngredientsRecipes.pkl")
         self.actualNamesOfVitamins = pd.read_pickle("actualNamesOfVitamins.pkl")
 
@@ -40,7 +34,6 @@ class readingData:
             "PUMPKIN": ""
         }
 
->>>>>>> ff469be92d4ba1e2a29329b5bf37b4da1dc3d347
         # self.nutritionallyDenseFoods = defaultdict(list)
         # self.recipesWithFoods = defaultdict(list)
         self.ingredientMap = {}
@@ -70,10 +63,10 @@ class readingData:
                 information[2] += float(data[val[2]])
                 information[3] += float(data[val[3]])
                 information[4] += float(data[val[4]])
-                information[5] += float(data[val[5]])
+                # information[5] += float(data[val[5]])
                 information[6] += float(data[val[6]])
                 information[7] += float(data[val[7]])
-                information[8] += float(data[val[8]])
+                # information[8] += float(data[val[8]])
                 information[9] += float(data[val[9]])
                 information[10] += float(data[val[10]])
                 information[11] += float(data[val[11]])
@@ -263,9 +256,8 @@ class readingData:
                 possibleRecipes = self.bestIngredientRecipes[j]
                 recipes[i].append(possibleRecipes[0])
                 continue
-
-        print(recipes)
-
+        
+        return recipes
 
 readingData = readingData(['beef', 'cheese', 'tomatoes', 'onions'])
 print(readingData.determineAdditionalRecipes())

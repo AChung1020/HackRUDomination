@@ -45,7 +45,7 @@ function DisplayPage_Vitamins() {
 
     <div className="App">
       <header className="App-header">
-        {data ? data : "Fetching data..."}
+        {data ? data["message"] : "Fetching data..."}
       </header>
     </div>
 
