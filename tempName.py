@@ -50,7 +50,7 @@ def getImage():
                 lines = val.strip().split('\n')
                 name = lines[2].split(":")[1][1:].strip()
                 value = lines[3].split(":")[1][1:]
-                if float(value) >= 0.35:
+                if float(value) >= 0.38:
                     name = name[1:-1]
                     if name in ingredientsData.recipesForEachIngredient:
                         actualValues.append(name)
@@ -80,21 +80,17 @@ def get_vitamins():
     for i in value.keys():
         l = []
         dict = defaultdict(list)
-        print(i)
-        print(recipes[i])
         dict["food"] = value[i]
         dict["recipe"] = recipes[i][0:2]
         l.append(dict)
         count += 1
         res[i] = l
-    print(jsonify(res))
     return jsonify(res)
 
 
 @app.route('/possibleRecipes', methods = {'GET'})
 def get_recipes():
     val = (actualData.populateRecipes())
-    print(val)
     return jsonify(val)
 
 # @app.route('/vitaminRecipes')

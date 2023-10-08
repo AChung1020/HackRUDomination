@@ -37,8 +37,6 @@ class readingData:
         #     "PUMPKIN": ""
         # }
 
-        print(self.currentIngredients)
-
         # self.nutritionallyDenseFoods = defaultdict(list)
         # self.recipesWithFoods = defaultdict(list)
         self.ingredientMap = {}
@@ -263,8 +261,6 @@ class readingData:
                     break
             if not (val):
                 continue
-            print(totalIngredientsMatch)
-            print(i)
             if ((totalIngredientsMatch/len(ingredients)) > 0.5):
                 possibleRecipes[i] = ingredients
 
