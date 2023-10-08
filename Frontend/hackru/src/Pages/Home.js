@@ -2,6 +2,17 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {useTypewriter, Cursor } from 'react-simple-typewriter';
 
+const S3_BUCKET ='YOUR_BUCKET_NAME';
+const REGION ='YOUR_REGION_NAME';
+const ACCESS_KEY ='YOUR_ACCESS_KEY';
+const SECRET_ACCESS_KEY ='YOUR_SECRET_ACCESS_KEY';
+
+const config = {
+    bucketName: S3_BUCKET,
+    region: REGION,
+    accessKeyId: ACCESS_KEY,
+    secretAccessKey: SECRET_ACCESS_KEY,
+}
 
 function Home() {
     const navigate = useNavigate();
@@ -55,6 +66,18 @@ function Home() {
         }
     }
 
+    const [selectedFile, setSelectedFile] = useState(null);
+
+    const handleFileInput = (e) => {
+        setSelectedFile(e.target.files[0]);
+    }
+
+    const handleUpload = async (file) => {
+        uploadFile(file, config)
+            .then(data => console.log(data))
+            .catch(err => console.error(err))
+    }
+
     const [welcome]  = useTypewriter({
         words: ['Welcome to _____'],
         typeSpeed: 120
@@ -75,9 +98,9 @@ function Home() {
             <form onSubmit = { handleUpload }>
                 <React.Fragment>
                 <h2>What's in your Fridge?</h2>
-                <input type = 'file' onChange={handleFile}/>
+                <input type = 'file' onChange={handleFileInput}/>
                 </React.Fragment>
-                <button  >Submit</button>
+                <button  onClick={() => handleUpload(selectedFile)}>Submit</button>
             </form>
         </div>
         
