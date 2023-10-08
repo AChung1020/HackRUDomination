@@ -250,14 +250,12 @@ class readingData:
 
         recipes = defaultdict(list)
         # print(self.actualNamesOfVitamins.keys())
-        print(self.nutritionallyDenseFoods.keys())
 
         for i in range(len(areasToImprove)):
             if i == 5:
                 break
-            print(areasToImprove[i])
-            if areasToImprove[i] in self.actualNamesOfVitamins:
-                areasToImprove[i] = self.actualNamesOfVitamins[areasToImprove[i]]
+            # if areasToImprove[i] in self.actualNamesOfVitamins:
+            #     areasToImprove[i] = self.actualNamesOfVitamins[areasToImprove[i]]
             ingredients = self.nutritionallyDenseFoods[areasToImprove[i]]
             for j in ingredients:
                 if len(recipes[i]) > 2:

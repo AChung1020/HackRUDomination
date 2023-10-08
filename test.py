@@ -196,7 +196,7 @@ def getBestNutrients():
 
     nutrients.sort_values(by=[val[14]], inplace=True, ascending=False)
 
-    Proteisssn = set(nutrients['Category'].head(10).tolist())
+    Protein = set(nutrients['Category'].head(10).tolist())
 
     nutrients.sort_values(by=[val[15]], inplace=True, ascending=False)
 
@@ -337,7 +337,7 @@ def getBestNutrients():
     nutrientMap["Manganese"] = Manganese
     nutrientMap["Niacin"] = Niacin
     nutrientMap["PantothenicAcid"] = PantothenicAcid
-    nutrientMap["Protein"] = Proteisssn
+    nutrientMap["Protein"] = Protein
     nutrientMap["RefusePercentage"] = RefusePercentage
     nutrientMap["Retinol"] = Retinol
     nutrientMap["Riboflavin"] = Riboflavin
