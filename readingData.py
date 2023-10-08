@@ -17,7 +17,7 @@ class readingData:
         self.nutrients = pd.read_csv('food.csv')
         self.currentIngredients = currentIngredients
 
-        self.meats = {"beef": 1, "chicken": 1, "pork": 1, "lamb": 1, "turkey": 1, "duck": 1, "goose": 1, "quail": 1, "rabbit": 1, "venison": 1, "bison": 1, "buffalo": 1, "elk": 1, "moose": 1, "emu": 1, "ostrich": 1, "kangaroo": 1, "alligator": 1, "turtle": 1, "frog": 1, "escargot": 1, "snail": 1, "bear": 1, "boar": 1, "caribou": 1, "reindeer": 1, "pheasant": 1, "squab": 1, "rabbit": 1, "squirrel": 1, "bear": 1, "boar": 1, "caribou": 1, "reindeer": 1, "pheasant": 1, "squab": 1, "rabbit": 1,
+        self.meats = {"beef": 1, "chicken": 1, "pork": 1, "lamb": 1, "turkey": 1, "duck": 1, "goose": 1, "quail": 1, "rabbit": 1, "venison": 1, "bison": 1, "buffalo": 1, "elk": 1, "moose": 1, "emu": 1, "ostrich": 1, "steak": 1, "alligator": 1, "turtle": 1, "frog": 1, "escargot": 1, "snail": 1, "bear": 1, "boar": 1, "caribou": 1, "reindeer": 1, "pheasant": 1, "squab": 1, "rabbit": 1, "squirrel": 1, "bear": 1, "boar": 1, "caribou": 1, "reindeer": 1, "pheasant": 1, "squab": 1, "rabbit": 1,
                       "squirrel": 1, "bear": 1, "boar": 1, "caribou": 1, "reindeer": 1, "pheasant": 1, "squab": 1, "rabbit": 1, "squirrel": 1, "bear": 1, "boar": 1, "caribou": 1, "reindeer": 1, "pheasant": 1, "squab": 1, "rabbit": 1, "squirrel": 1, "bear": 1, "boar": 1, "caribou": 1, "reindeer": 1, "pheasant": 1, "squab": 1, "rabbit": 1, "squirrel": 1, "bear": 1, "boar": 1, "caribou": 1, "reindeer": 1, "pheasant": 1, "squab": 1, "cod": 1, "fish": 1, "crab": 1, "mussels": 1, "octopus": 1, "shrimp": 1, "prawns": 1}
         self.carbs = {"rice": 1, "bread": 1, "pasta": 1, "potatoes": 1}
         self.obviousSpices = {"salt": 1, "pepper": 1, "water": 1,
@@ -261,6 +261,8 @@ class readingData:
                     break
             if not (val):
                 continue
+            print(totalIngredientsMatch)
+            print(i)
             if ((totalIngredientsMatch/len(ingredients)) > 0.5):
                 possibleRecipes[i] = ingredients
 
@@ -294,10 +296,10 @@ class readingData:
 
 
 # Create an instance of the readingData class (assuming readingData is a class)
-data_instance = readingData([])
+# data_instance = readingData([])
 
 # Call the determineAreasToImprove method and store the result in a variable
-result = data_instance.determineAdditionalRecipes()
+# result = data_instance.determineAdditionalRecipes()
 
 # Now, you can print the result
-print(result)
+# print(result)

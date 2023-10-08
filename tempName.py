@@ -93,7 +93,9 @@ def get_vitamins():
 
 @app.route('/possibleRecipes', methods = {'GET'})
 def get_recipes():
-    return jsonify(actualData.populateRecipes())
+    val = (actualData.populateRecipes())
+    print(val)
+    return jsonify(val)
 
 # @app.route('/vitaminRecipes')
 # def get_vitaminRecipes():

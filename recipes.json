@@ -4,8 +4,8 @@
     "cuisine": "greek",
     "ingredients": [
       "lettuce",
-      "olives",
-      "tomatoes",
+      "olive",
+      "tomato",
       "garlic",
       "pepper",
       "onion",
@@ -1175,7 +1175,7 @@
       "mirin",
       "rice vinegar",
       "soy sauce",
-      "apples"
+      "apple"
     ]
   },
   {
