@@ -1,12 +1,39 @@
 {
-    "Vitamins": {
-      "A": ["Carrots", "Sweet Potatoes", "Kale"],
-      "B": ["Whole Grains", "Beans", "Bananas"],
-      "C": ["Oranges", "Strawberries", "Bell Peppers"],
-      "D": ["Salmon", "Mushrooms", "Eggs"],
-      "E": ["Almonds", "Spinach", "Avocado"],
-      "K": ["Broccoli", "Brussels Sprouts", "Kale"],
-      "Omega": ["Flaxseed", "Walnuts", "Chia Seeds"]
-    }
+  "Vitamins": {
+    "A": [
+      {"food": "Carrots", "img": "logo192.png", "recipe": ["carrot salad" , "sweet potato mash"] },
+      {"food": "Sweet Potatoes"},
+      {"food": "Kale"}
+    ],
+    "B": [
+      {"food": "Whole Grains", "img": "logo192.png"},
+      {"food": "Beans"},
+      {"food": "Bananas"}
+    ],
+    "C": [
+      {"food": "Oranges", "img": "logo192.png"},
+      {"food": "Strawberries"},
+      {"food": "Bell Peppers"}
+    ],
+    "D": [
+      {"food": "Salmon", "img": "logo192.png"},
+      {"food": "Mushrooms"},
+      {"food": "Eggs"}
+    ],
+    "E": [
+      {"food": "Almonds", "img": "logo192.png"},
+      {"food": "Spinach"},
+      {"food": "Avocado"}
+    ],
+    "K": [
+      {"food": "Broccoli", "img": "logo192.png"},
+      {"food": "Brussels Sprouts"},
+      {"food": "Kale"}
+    ],
+    "Omega": [
+      {"food": "Flaxseed", "img": "logo192.png"},
+      {"food": "Walnuts"},
+      {"food": "Chia Seeds"}
+    ]
   }
-  
+}
