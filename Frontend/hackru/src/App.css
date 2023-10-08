@@ -1,4 +1,3 @@
-
 .site-title {
   top: 0;
   background-color: rgb(82, 82, 253);
@@ -122,6 +121,7 @@
 
 .background {
   background-image: linear-gradient( rgb(82, 82, 253), rgb(227, 54, 54));
+  min-height: 100vh;
 }
 .vitamin-container {
   width: 50%; 
