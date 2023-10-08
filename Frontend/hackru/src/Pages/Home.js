@@ -29,25 +29,31 @@ function Home() {
     }
 
     function handleUpload(event) {
-
         event.preventDefault();
-        const formData = new FormData()
-        formData.append('file', file)
-        
+    
         if(file != null) {
-            fetch('http://localhost:5000/imageRetrieval',  //change to URL of API later
-            {  method: 'POST',
-            body: formData
-            }).then((response) => response.json())
-            .then((result) => {
-                console.log("Success", result)
-            })
-            .catch(error => {
-                console.error('error', error)
-            })
+            const reader = new FileReader();
+            reader.onloadend = function() {
+                const base64String = reader.result;
+                // Sending the base64 string to the backend
+                fetch('http://localhost:5000/imageRetrieval', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ image: base64String })
+                })
+                .then(response => response.json())
+                .then(result => {
+                    console.log("Success:", result);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            }
+            reader.readAsDataURL(file);
         }
-        
-    };
+    }
 
     const [welcome]  = useTypewriter({
         words: ['Welcome to _____'],
