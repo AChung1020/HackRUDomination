@@ -1,3 +1,4 @@
+import csv
 import pandas as pd
 from collections import defaultdict
 import json
@@ -195,7 +196,7 @@ def getBestNutrients():
 
     nutrients.sort_values(by=[val[14]], inplace=True, ascending=False)
 
-    Protein = set(nutrients['Category'].head(10).tolist())
+    Proteisssn = set(nutrients['Category'].head(10).tolist())
 
     nutrients.sort_values(by=[val[15]], inplace=True, ascending=False)
 
@@ -243,19 +244,23 @@ def getBestNutrients():
 
     nutrients.sort_values(by=[val[26]], inplace=True, ascending=False)
 
-    HouseholdWeights1stHouseholdWeight = set(nutrients['Category'].head(10).tolist())
+    HouseholdWeights1stHouseholdWeight = set(
+        nutrients['Category'].head(10).tolist())
 
     nutrients.sort_values(by=[val[27]], inplace=True, ascending=False)
 
-    HouseholdWeights1stHouseholdWeightDescription = set(nutrients['Category'].head(10).tolist())
+    HouseholdWeights1stHouseholdWeightDescription = set(
+        nutrients['Category'].head(10).tolist())
 
     nutrients.sort_values(by=[val[28]], inplace=True, ascending=False)
 
-    HouseholdWeights2ndHouseholdWeight = set(nutrients['Category'].head(10).tolist())
+    HouseholdWeights2ndHouseholdWeight = set(
+        nutrients['Category'].head(10).tolist())
 
     nutrients.sort_values(by=[val[29]], inplace=True, ascending=False)
 
-    HouseholdWeights2ndHouseholdWeightDescription = set(nutrients['Category'].head(10).tolist())
+    HouseholdWeights2ndHouseholdWeightDescription = set(
+        nutrients['Category'].head(10).tolist())
 
     nutrients.sort_values(by=[val[30]], inplace=True, ascending=False)
 
@@ -332,7 +337,7 @@ def getBestNutrients():
     nutrientMap["Manganese"] = Manganese
     nutrientMap["Niacin"] = Niacin
     nutrientMap["PantothenicAcid"] = PantothenicAcid
-    nutrientMap["Protein"] = Protein
+    nutrientMap["Protein"] = Proteisssn
     nutrientMap["RefusePercentage"] = RefusePercentage
     nutrientMap["Retinol"] = Retinol
     nutrientMap["Riboflavin"] = Riboflavin
@@ -372,24 +377,25 @@ def test3():
     nutrientMap = pd.read_pickle('nutrientMap.pkl')
     print(nutrientMap)
 
+
 def test4(currentIngredients):
 
     nutritionallyDenseFoods = pd.read_pickle('nutrientMap.pkl')
 
     nutrients = pd.read_csv('food.csv')
-        
+
     information = [0 for element in range(len(nutritionallyDenseFoods))]
 
     val = "Data.Alpha Carotene,Data.Ash,Data.Beta Carotene,Data.Beta Cryptoxanthin,Data.Carbohydrate,Data.Cholesterol,Data.Choline,Data.Fiber,Data.Kilocalories,Data.Lutein and Zeaxanthin,Data.Lycopene,Data.Manganese,Data.Niacin,Data.Pantothenic Acid,Data.Protein,Data.Refuse Percentage,Data.Retinol,Data.Riboflavin,Data.Selenium,Data.Sugar Total,Data.Thiamin,Data.Water,Data.Fat.Monosaturated Fat,Data.Fat.Polysaturated Fat,Data.Fat.Saturated Fat,Data.Fat.Total Lipid,Data.Household Weights.1st Household Weight,Data.Household Weights.1st Household Weight Description,Data.Household Weights.2nd Household Weight,Data.Household Weights.2nd Household Weight Description,Data.Major Minerals.Calcium,Data.Major Minerals.Copper,Data.Major Minerals.Iron,Data.Major Minerals.Magnesium,Data.Major Minerals.Phosphorus,Data.Major Minerals.Potassium,Data.Major Minerals.Sodium,Data.Major Minerals.Zinc,Data.Vitamins.Vitamin A - IU,Data.Vitamins.Vitamin A - RAE,Data.Vitamins.Vitamin B12,Data.Vitamins.Vitamin B6,Data.Vitamins.Vitamin C,Data.Vitamins.Vitamin E,Data.Vitamins.Vitamin K"
 
     val = val.split(",")
-    
+
     # Get all the recipes that contain the current ingredients
 
     keys = nutritionallyDenseFoods.keys()
 
     ingredientMap = {}
-    
+
     for i in currentIngredients:
         ingredientMap[i.upper()] = 1
 
@@ -449,7 +455,7 @@ def test4(currentIngredients):
 # print(test4(["chicken", "eggs", "milk", "yogurt", "squash"]))
 
     # def populateNutritionallyDenseFoods(self):
-        
+
     #     def populateProtein():
     #         self.nutritionallyDenseFoods["protein"].append("chicken")
     #         self.nutritionallyDenseFoods["protein"].append("beef")
@@ -458,7 +464,7 @@ def test4(currentIngredients):
     #         self.nutritionallyDenseFoods["protein"].append("egg")
     #         self.nutritionallyDenseFoods["protein"].append("tofu")
     #         self.nutritionallyDenseFoods["protein"].append("beans")
-            
+
     #     def populateCarbs():
     #         self.nutritionallyDenseFoods["carbs"].append("rice")
     #         self.nutritionallyDenseFoods["carbs"].append("bread")
@@ -478,7 +484,7 @@ def test4(currentIngredients):
     #         self.nutritionallyDenseFoods["vitamins"].append("apple")
     #         self.nutritionallyDenseFoods["vitamins"].append("banana")
     #         self.nutritionallyDenseFoods["vitamins"].append("grapes")
-        
+
     #     def populateFats():
     #         self.nutritionallyDenseFoods["fats"].append("avocado")
     #         self.nutritionallyDenseFoods["fats"].append("cheese")
@@ -493,16 +499,13 @@ def test4(currentIngredients):
     #     populateVitamins()
 
 
-import pandas as pd
-from collections import defaultdict
-import csv
-
 class readingData:
 
     def __init__(self, currentIngredients):
 
         # self.nutrients = pd.read_csv('nutrients_csvfile.csv')
-        self.allIngredientsInARecipe = pd.read_pickle('allIngredientsInARecipe.pkl')
+        self.allIngredientsInARecipe = pd.read_pickle(
+            'allIngredientsInARecipe.pkl')
         self.actual_ingredients = pd.read_pickle('actual_ingredients.pkl')
         self.ingredientsToRecipes = pd.read_pickle('ingredientsToRecipes.pkl')
         self.recipe_map = pd.read_pickle('recipe_map.pkl')
@@ -516,16 +519,16 @@ class readingData:
         self.ingredientMap = {}
         for i in self.currentIngredients:
             self.ingredientMap[i.upper()] = 1
-        
 
     def getNutritonalInformation(self):
-        
-        information = [0 for element in range(len(self.nutritionallyDenseFoods))]
+
+        information = [0 for element in range(
+            len(self.nutritionallyDenseFoods))]
 
         val = "Data.Alpha Carotene,Data.Ash,Data.Beta Carotene,Data.Beta Cryptoxanthin,Data.Carbohydrate,Data.Cholesterol,Data.Choline,Data.Fiber,Data.Kilocalories,Data.Lutein and Zeaxanthin,Data.Lycopene,Data.Manganese,Data.Niacin,Data.Pantothenic Acid,Data.Protein,Data.Refuse Percentage,Data.Retinol,Data.Riboflavin,Data.Selenium,Data.Sugar Total,Data.Thiamin,Data.Water,Data.Fat.Monosaturated Fat,Data.Fat.Polysaturated Fat,Data.Fat.Saturated Fat,Data.Fat.Total Lipid,Data.Household Weights.1st Household Weight,Data.Household Weights.1st Household Weight Description,Data.Household Weights.2nd Household Weight,Data.Household Weights.2nd Household Weight Description,Data.Major Minerals.Calcium,Data.Major Minerals.Copper,Data.Major Minerals.Iron,Data.Major Minerals.Magnesium,Data.Major Minerals.Phosphorus,Data.Major Minerals.Potassium,Data.Major Minerals.Sodium,Data.Major Minerals.Zinc,Data.Vitamins.Vitamin A - IU,Data.Vitamins.Vitamin A - RAE,Data.Vitamins.Vitamin B12,Data.Vitamins.Vitamin B6,Data.Vitamins.Vitamin C,Data.Vitamins.Vitamin E,Data.Vitamins.Vitamin K"
 
         val = val.split(",")
-        
+
         # Get all the recipes that contain the current ingredients
 
         keys = self.nutritionallyDenseFoods.keys()
@@ -599,7 +602,7 @@ class readingData:
         areasToImprove.append("vitamins")
 
         return areasToImprove
-    
+
     def populateRecipes(self):
 
         # return recipes with the current ingredients
@@ -614,7 +617,7 @@ class readingData:
                     total += 1
             if total >= len(data) - 1 or (total / len(data)) > 0.8:
                 possibleRecipes.append(i)
-        
+
         return possibleRecipes
 
 
@@ -641,6 +644,7 @@ def test5():
 
 # test5()
 
+
 def test6():
 
     nutrientMap = pd.read_pickle('nutrientMap.pkl')
@@ -662,11 +666,12 @@ def test6():
                         if z.upper() == j:
                             recipesContainingIngredients[j].append(k)
                             break
-    
+
     pd.to_pickle(recipesContainingIngredients, 'bestIngredientsRecipes.pkl')
 
+
 def test7():
-        
+
     nutritionallyDenseFoods = pd.read_pickle('nutrientMap.pkl')
 
     actualNamesOfVitamins = pd.read_pickle("actualNamesOfVitamins.pkl")
@@ -693,8 +698,9 @@ def test7():
                 continue
             recipes[i].append(possibleRecipes[0])
             continue
-    
+
     print(recipes)
+
 
 def test8():
 
@@ -720,50 +726,51 @@ def test8():
     nutrientMap["Household Weights 2nd Household Weight Description"] = "HouseholdWeights2ndHouseholdWeightDescription"
     pd.to_pickle(nutrientMap, "actualNamesOfVitamins.pkl")
 
+
 test8()
 
-    # nutrientMap[val[0]] = "AlphaCarotene"
-    # nutrientMap[val[1]] = "Ash"
-    # nutrientMap[val[2]] = "BetaCarotene"
-    # nutrientMap[val[3]] = "BetaCryptoxanthin"
-    # nutrientMap[val[4]] = "Carbohydrate"
-    # nutrientMap[val[5]] = "Cholesterol"
-    # nutrientMap[val[6]] = "Choline"
-    # nutrientMap[val[7]] = "Fiber"
-    # nutrientMap[val[8]] = "Kilocalories"
-    # nutrientMap[val[9]] = "LuteinandZeaxanthin"
-    # nutrientMap[val[10]] = "Lycopene"
-    # nutrientMap[val[11]] = "Manganese"
-    # nutrientMap[val[12]] = "Niacin"
-    # nutrientMap[val[13]] = "PantothenicAcid"
-    # nutrientMap[val[14]] = "Protein"
-    # nutrientMap[val[15]] = "RefusePercentage"
-    # nutrientMap[val[16]] = "Retinol"
-    # nutrientMap[val[17]] = "Riboflavin"
-    # nutrientMap[val[18]] = "Selenium"
-    # nutrientMap[val[19]] = "SugarTotal"
-    # nutrientMap[val[20]] = "Thiamin"
-    # nutrientMap[val[21]] = "Water"
-    # nutrientMap[val[22]] = "MonosaturatedFat"
-    # nutrientMap[val[23]] = "PolysaturatedFat"
-    # nutrientMap[val[24]] = "SaturatedFat"
-    # nutrientMap[val[25]] = "TotalLipid"
-    # nutrientMap[val[26]] = "HouseholdWeights1stHouseholdWeight"
-    # nutrientMap[val[27]] = "HouseholdWeights1stHouseholdWeightDescription"
-    # nutrientMap[val[28]] = "HouseholdWeights2ndHouseholdWeight"
-    # nutrientMap[val[29]] = "HouseholdWeights2ndHouseholdWeightDescription"
-    # nutrientMap[val[30]] = "Calcium"
-    # nutrientMap[val[31]] = "Copper"
-    # nutrientMap[val[32]] = "Iron"
-    # nutrientMap[val[33]] = "Magnesium"
-    # nutrientMap[val[34]] = "Phosphorus"
-    # nutrientMap[val[35]] = "Potassium"
-    # nutrientMap[val[36]] = "Sodium"
-    # nutrientMap[val[37]] = "Zinc"
-    # nutrientMap[val[38]] = "VitaminA_IU"
-    # nutrientMap[val[39]] = "VitaminA_RAE"
-    # nutrientMap[val[40]] = "VitaminB12"
-    # nutrientMap[val[41]] = "VitaminB6"
-    # nutrientMap[val[42]] = "VitaminC"
-    # nutrientMap[val[43]] = "VitaminE"
-    # nutrientMap[val[44]] = "VitaminK"
+# nutrientMap[val[0]] = "AlphaCarotene"
+# nutrientMap[val[1]] = "Ash"
+# nutrientMap[val[2]] = "BetaCarotene"
+# nutrientMap[val[3]] = "BetaCryptoxanthin"
+# nutrientMap[val[4]] = "Carbohydrate"
+# nutrientMap[val[5]] = "Cholesterol"
+# nutrientMap[val[6]] = "Choline"
+# nutrientMap[val[7]] = "Fiber"
+# nutrientMap[val[8]] = "Kilocalories"
+# nutrientMap[val[9]] = "LuteinandZeaxanthin"
+# nutrientMap[val[10]] = "Lycopene"
+# nutrientMap[val[11]] = "Manganese"
+# nutrientMap[val[12]] = "Niacin"
+# nutrientMap[val[13]] = "PantothenicAcid"
+# nutrientMap[val[14]] = "Protein"
+# nutrientMap[val[15]] = "RefusePercentage"
+# nutrientMap[val[16]] = "Retinol"
+# nutrientMap[val[17]] = "Riboflavin"
+# nutrientMap[val[18]] = "Selenium"
+# nutrientMap[val[19]] = "SugarTotal"
+# nutrientMap[val[20]] = "Thiamin"
+# nutrientMap[val[21]] = "Water"
+# nutrientMap[val[22]] = "MonosaturatedFat"
+# nutrientMap[val[23]] = "PolysaturatedFat"
+# nutrientMap[val[24]] = "SaturatedFat"
+# nutrientMap[val[25]] = "TotalLipid"
+# nutrientMap[val[26]] = "HouseholdWeights1stHouseholdWeight"
+# nutrientMap[val[27]] = "HouseholdWeights1stHouseholdWeightDescription"
+# nutrientMap[val[28]] = "HouseholdWeights2ndHouseholdWeight"
+# nutrientMap[val[29]] = "HouseholdWeights2ndHouseholdWeightDescription"
+# nutrientMap[val[30]] = "Calcium"
+# nutrientMap[val[31]] = "Copper"
+# nutrientMap[val[32]] = "Iron"
+# nutrientMap[val[33]] = "Magnesium"
+# nutrientMap[val[34]] = "Phosphorus"
+# nutrientMap[val[35]] = "Potassium"
+# nutrientMap[val[36]] = "Sodium"
+# nutrientMap[val[37]] = "Zinc"
+# nutrientMap[val[38]] = "VitaminA_IU"
+# nutrientMap[val[39]] = "VitaminA_RAE"
+# nutrientMap[val[40]] = "VitaminB12"
+# nutrientMap[val[41]] = "VitaminB6"
+# nutrientMap[val[42]] = "VitaminC"
+# nutrientMap[val[43]] = "VitaminE"
+# nutrientMap[val[44]] = "VitaminK"
