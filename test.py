@@ -324,10 +324,14 @@ def getBestNutrients():
 
     nutrientMap = {}
 
-    nutrientMap["Data.Ash"] = Ash
+    nutrientMap["AlphaCarotene"] = AlphaCarotene
+    nutrientMap["Ash"] = Ash
     nutrientMap["BetaCarotene"] = BetaCarotene
     nutrientMap["BetaCryptoxanthin"] = BetaCryptoxanthin
     nutrientMap["Carbohydrate"] = Carbohydrate
+    nutrientMap["Carbohydrate"].add("RICE")
+    nutrientMap["Carbohydrate"].add("PASTA")
+    nutrientMap["Carbohydrate"].add("BREAD")
     nutrientMap["Cholesterol"] = Cholesterol
     nutrientMap["Choline"] = Choline
     nutrientMap["Fiber"] = Fiber
@@ -369,8 +373,11 @@ def getBestNutrients():
     nutrientMap["VitaminE"] = VitaminE
     nutrientMap["VitaminK"] = VitaminK
 
+    # print(nutrientMap)
+
     pd.to_pickle(nutrientMap, 'nutrientMap.pkl')
 
+getBestNutrients()
 
 def test3():
 
