@@ -23,7 +23,7 @@ config.read(filePath)
 app = Flask(__name__)
 # CORS(app, resources={r"/*": {"origins": "http://localhost:3000", "http://localhost:5000"}})
 CORS(app, origins=["http://localhost:3000", "http://localhost:5000"])
-ingredientsData = readingData()
+actualData = readingData()
 
 @app.route('/data', methods={'GET'})
 def get_data():
@@ -52,31 +52,32 @@ def getImage():
                     name = name[1:-1]
                     if name in ingredientsData.recipesForEachIngredient:
                         actualValues.append(name)
-        ingredientsData.changeIngredients(actualValues)        
+        print(actualValues)
+        actualData.changeIngredients(actualValues)        
     return jsonify("Received your image!")
 
 @app.route('/valuesRetrieval', methods={'POST'})
 def getValues():
     values = request.json['ingredients']
-    ingredientsData = readingData(values)
+    actualData = readingData(values)
     return f"Received your ingredients!"
     
 
 @app.route('/nutritionalData', methods={'GET'})
 def get_nutritionalInformation():
-    map = jsonify(ingredientsData.determineAdditionalRecipes())
-    map["importantVitaminInfo"] = ingredientsData.getNutritionalInformation()
+    map = jsonify(actualData.determineAdditionalRecipes())
+    map["importantVitaminInfo"] = actualData.getNutritionalInformation()
     return jsonify(map)
 
 @app.route('/necessaryVitamins', methods = {'GET'})
 def get_vitamins():
-    value = jsonify(ingredientsData.determineAreasToImprove())
-    # return value
+    value = jsonify(actualData.determineAreasToImprove())
+    return value
 
 
 @app.route('/possibleRecipes', methods = {'GET'})
 def get_recipes():
-    return jsonify(ingredientsData.populateRecipes())
+    return jsonify(actualData.populateRecipes())
 
 # @app.route('/vitaminRecipes')
 # def get_vitaminRecipes():

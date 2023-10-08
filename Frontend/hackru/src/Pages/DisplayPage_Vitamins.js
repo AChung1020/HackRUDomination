@@ -7,23 +7,23 @@ function DisplayPage_Vitamins() {
 
   const navigate = useNavigate();
 
-  // const [data, setData] = useState();
-  //const [loading, setLoading] = useState(true);
+  const [data, setData] = useState();
+  const [loading, setLoading] = useState(true);
 
-  // useEffect(() => {
-  //   fetch("http://localhost:5000/data")
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       setData(data);
-  //       setLoading(false);
-  //     })
-  //     .catch(error => {
-  //       console.error('Error fetching data:', error);
-  //       setLoading(false);
-  //     });
-  // }, []);
+  useEffect(() => {
+    fetch("http://localhost:5000/necessaryVitamins")
+      .then(response => response.json())
+      .then(data => {
+        setData(data);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+        setLoading(false);
+      });
+  }, []);
 
-  const data = test;
+  // const data = test;
 
   const routeChangeLogin = () => {
     let path = `/DisplayPage_Recipes`;
@@ -46,7 +46,7 @@ function DisplayPage_Vitamins() {
   //   </div>
   // )
 
-  //if (loading) return <div className="loading">Loading...</div>;
+  if (loading) return <div className="loading">Loading...</div>;
 
 
   return (

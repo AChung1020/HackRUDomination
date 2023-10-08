@@ -64,7 +64,7 @@ class readingData:
 
         for name, data in self.nutrients.iterrows():
             currIngredient = data['Category']
-            if currIngredient not in self.ingredientMap:
+            if currIngredient.upper() not in self.ingredientMap:
                 continue
             else:
                 information[0] += float(data[val[0]])
@@ -215,7 +215,22 @@ class readingData:
         if information[37] < 3:  # Major Minerals.Zinc
             areasToImprove.append((val[37])[20:])
 
-        return areasToImprove
+        areasToImproveMap = {}
+
+        print(areasToImprove)
+
+        for i in range(len(areasToImprove)):
+            if areasToImprove[i] in self.actualNamesOfVitamins:
+                areasToImprove[i] = self.actualNamesOfVitamins[areasToImprove[i]]
+            ingredients = []
+            for j in self.nutritionallyDenseFoods[areasToImprove[i]]:
+                if j.lower() not in self.recipesForEachIngredient:
+                    continue
+                ingredients.append(j)
+                if len(ingredients) > 2:
+                    break
+            areasToImproveMap[areasToImprove[i]] = ingredients
+        return areasToImproveMap
 
     def populateRecipes(self):
 
@@ -252,6 +267,7 @@ class readingData:
     def determineAdditionalRecipes(self):
 
         areasToImprove = self.determineAreasToImprove()
+        areasToImprove = list(areasToImprove.keys())
 
         recipes = defaultdict(list)
         # print(self.actualNamesOfVitamins.keys())
@@ -269,7 +285,7 @@ class readingData:
                     break
                 possibleRecipes = self.bestIngredientRecipes[j]
                 if (len(possibleRecipes) > 0):
-                    recipes[i].append(possibleRecipes[0])
+                    recipes[areasToImprove[i]].append(possibleRecipes[0])
                 continue
 
         return recipes
