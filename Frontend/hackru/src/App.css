@@ -203,6 +203,15 @@
   backface-visibility: hidden;
 }
 
+.card .front,
+.card .back {
+  background-image: linear-gradient( rgb(82, 82, 253), rgb(227, 54, 54));
+  border: 1px solid blue;
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+}
+
 
 
 .card .back {

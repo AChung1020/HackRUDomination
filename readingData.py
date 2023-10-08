@@ -291,6 +291,8 @@ class readingData:
                     break
                 possibleRecipes = self.bestIngredientRecipes[j]
                 if (len(possibleRecipes) > 0):
+                    if possibleRecipes[0] == "31908":
+                        continue
                     recipes[areasToImprove[i]].append(possibleRecipes[0])
                 continue
 
