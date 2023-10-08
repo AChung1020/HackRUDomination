@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {useTypewriter, Cursor } from 'react-simple-typewriter';
+import { uploadFile } from 'react-s3';
 
-const S3_BUCKET ='YOUR_BUCKET_NAME';
-const REGION ='YOUR_REGION_NAME';
+const S3_BUCKET ='hackru';
+const REGION ='us-east-1';
 const ACCESS_KEY ="AKIASXA4X4ZE7TLPOTB6";
 const SECRET_ACCESS_KEY ="xw+CwEvyFUwTEzdKXJC1W4kBz1I/LEwZnCqdN+IN";
 
@@ -40,32 +41,32 @@ function Home() {
         }
     }
 
-    function handleUpload(event) {
-        event.preventDefault();
+    // function handleUpload(event) {
+    //     event.preventDefault();
     
-        if(file != null) {
-            const reader = new FileReader();
-            reader.onloadend = function() {
-                const base64String = reader.result;
-                // Sending the base64 string to the backend
-                fetch('http://localhost:5000/imageRetrieval', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ image: base64String })
-                })
-                .then(response => response.json())
-                .then(result => {
-                    console.log("Success:", result);
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
-            }
-            reader.readAsDataURL(file);
-        }
-    }
+    //     if(file != null) {
+    //         const reader = new FileReader();
+    //         reader.onloadend = function() {
+    //             const base64String = reader.result;
+    //             // Sending the base64 string to the backend
+    //             fetch('http://localhost:5000/imageRetrieval', {
+    //                 method: 'POST',
+    //                 headers: {
+    //                     'Content-Type': 'application/json'
+    //                 },
+    //                 body: JSON.stringify({ image: base64String })
+    //             })
+    //             .then(response => response.json())
+    //             .then(result => {
+    //                 console.log("Success:", result);
+    //             })
+    //             .catch(error => {
+    //                 console.error('Error:', error);
+    //             });
+    //         }
+    //         reader.readAsDataURL(file);
+    //     }
+    // }
 
     const [selectedFile, setSelectedFile] = useState(null);
 
@@ -97,10 +98,8 @@ function Home() {
         <div className='right-half'>
             <h1> Find out what you are missing in your diet!!! :D</h1>
             <form onSubmit = { handleUpload }>
-                <React.Fragment>
                 <h2>What's in your Fridge?</h2>
                 <input type = 'file' onChange={handleFileInput}/>
-                </React.Fragment>
                 <button  onClick={() => handleUpload(selectedFile)}>Submit</button>
             </form>
         </div>
