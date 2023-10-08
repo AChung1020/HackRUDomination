@@ -22,6 +22,7 @@ class readingData:
         
         self.nutritionallyDenseFoods = pd.read_pickle('nutrientMap.pkl')
         self.bestIngredientRecipes = pd.read_pickle("bestIngredientsRecipes.pkl")
+        self.actualNamesOfVitamins = pd.read_pickle("actualNamesOfVitamins.pkl")
         # self.nutritionallyDenseFoods = defaultdict(list)
         # self.recipesWithFoods = defaultdict(list)
         self.ingredientMap = {}
@@ -152,7 +153,7 @@ class readingData:
         for i in range(len(areasToImprove)):
             if i == 5:
                 break
-            ingredients = self.nutritionallyDenseFoods[areasToImprove[i]]
+            ingredients = self.nutritionallyDenseFoods[self.actualNamesOfVitamins[areasToImprove[i]]]
             for j in ingredients:
                 if recipes[i] > 2:
                     break
@@ -168,7 +169,7 @@ class readingData:
 
 
 readingData = readingData(['beef', 'cheese', 'tomatoes', 'onions'])
-# print(readingData.determineAdditionalRecipes())
+print(readingData.determineAdditionalRecipes())
 
 
 
