@@ -111,7 +111,7 @@
 }
 
 .left-half h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -146,6 +146,7 @@
   padding-left: 0;
 }
 
+/* image part */
 .image-food {
   align-items: right;
   width:100%;
@@ -203,4 +204,46 @@
 
 .card .back {
   transform: rotateY(180deg);
+}
+
+/* Recipes Page */
+
+.recipe-container {
+  max-width: 800px; /* limit the width of the container */
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+}
+
+.recipe-container h1 {
+  text-align: center;
+  margin-top: 0;
+  padding: 0;
+}
+
+.ingredient-listing {
+  border: 1px solid #ddd;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center; /* Center the inline content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center the content vertically */
+    align-items: center; /* Center the content horizontally */
+}
+
+.ingredient-listing h2 {
+  font-size: 1.5em;
+  margin-bottom: 20px; /* space between the food name and ingredients list */
+  color: #333; /* dark gray */
+}
+
+.ingredient-list {
+  list-style-type: none; /* removing bullets */
+  padding-left: 0;
+}
+
+.ingredient-list li {
+  padding: 5px 0;
 }
