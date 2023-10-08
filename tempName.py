@@ -10,6 +10,8 @@ import os
 
 import configparser
 
+import json
+
 filePath = os.path.expanduser(".aws/credentials")
 
 config = configparser.ConfigParser()
@@ -21,7 +23,7 @@ config.read(filePath)
 app = Flask(__name__)
 # CORS(app, resources={r"/*": {"origins": "http://localhost:3000", "http://localhost:5000"}})
 CORS(app, origins=["http://localhost:3000", "http://localhost:5000"])
-ingredientsData = None
+ingredientsData = readingData()
 
 @app.route('/data', methods={'GET'})
 def get_data():
@@ -29,14 +31,35 @@ def get_data():
 
 @app.route('/imageRetrieval', methods={'POST'})
 def getImage():
-    imageURL = request.data
-    print(type(imageURL))
-    # values = determineOutcomes(imageURL.decode("utf-8"))
-    ingredientsData = readingData(["apple", "banana", "orange"])
-    print(imageURL)
-    # print(values)
-    # Figure out what values returns as
-    # ingredientsData = readingData(values)
+    ingredientsData = readingData()
+    file = request.files['file']
+    if file:
+        image_data = file.read()
+        values = determineOutcomes(image_data)
+        # print(values._ListFieldsItemKey)
+        actualValues = []
+        count = 0
+        for i in str(values.ListFields()[2][1]).split("concepts"):
+            if count == 0:
+                count += 1
+                continue
+            else:
+                val = i.strip()
+                lines = val.strip().split('\n')
+                name = lines[2].split(":")[1][1:].strip()
+                value = lines[3].split(":")[1][1:]
+                if float(value) >= 0.6:
+                    name = name[1:-1]
+                    if name in ingredientsData.recipesForEachIngredient:
+                        actualValues.append(name)
+        # values = jsonify(str(values))['data']
+
+        # for j in values:
+        #     if j in ingredientsData.recipesForEachIngredient:
+        #         actualValues.append(j)
+        ingredientsData.changeIngredients(actualValues)
+        
+    # ingredientsData = readingData(["apple", "banana", "orange"])
     return jsonify("Received your image!")
 
 @app.route('/valuesRetrieval', methods={'POST'})
