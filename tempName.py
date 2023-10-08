@@ -12,6 +12,8 @@ import configparser
 
 import json
 
+from collections import defaultdict
+
 filePath = os.path.expanduser(".aws/credentials")
 
 config = configparser.ConfigParser()
@@ -71,8 +73,22 @@ def get_nutritionalInformation():
 
 @app.route('/necessaryVitamins', methods = {'GET'})
 def get_vitamins():
-    value = jsonify(actualData.determineAreasToImprove())
-    return value
+    res = {}
+    value = actualData.determineAreasToImprove()
+    recipes = actualData.determineAdditionalRecipes()
+    count = 0
+    for i in value.keys():
+        l = []
+        dict = defaultdict(list)
+        print(i)
+        print(recipes[i])
+        dict["food"] = value[i]
+        dict["recipe"] = recipes[i][0:2]
+        l.append(dict)
+        count += 1
+        res[i] = l
+    print(jsonify(res))
+    return jsonify(res)
 
 
 @app.route('/possibleRecipes', methods = {'GET'})
@@ -82,7 +98,6 @@ def get_recipes():
 # @app.route('/vitaminRecipes')
 # def get_vitaminRecipes():
 #     return jsonify(ingredientsData.determineAdditionalRecipes())
-
 if __name__ == '__main__':
     app.run(debug = True, port = 5000)
 

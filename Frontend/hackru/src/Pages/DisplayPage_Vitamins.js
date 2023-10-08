@@ -55,27 +55,25 @@ function DisplayPage_Vitamins() {
       <div className="vitamin-container">
         <h1>Looks like you could use some...</h1>
         
-        {Object.entries(data.Vitamins).map(([vitamin, foods]) => (
+        {Object.entries(data).map(([vitamin, vitaminInfo]) => (
           <div key={vitamin}>
-            <h2 className='title-vitamin'>Vitamin {vitamin}</h2>
+            <h2 className='title-vitamin'>{vitamin}</h2>
             <div className="vitamin-listing">
               <div className="vitamin-listing-content">
                 <ul className="food-list">
-                  {foods.map(item => (
-                    <li key={item.food}>
-                      {item.food}
+                  {vitaminInfo[0].food.map((foodItem, idx) => (
+                    <li key={foodItem}>
+                      {foodItem}
                     </li>
                   ))}
                 </ul>
                 <div className="image-container" onClick={() => handleFlip(vitamin)}>
                   <div className={`card ${flipped === vitamin ? 'flip' : ''}`}>
                     <div className="front">
-                      {foods.map(item => item.img && <img className="image-food" src={item.img} alt={item.food} />)}
+                      <img className="image-food" src={vitaminInfo[0].img} alt={vitamin} />
                     </div>
                     <div className="back">
-                      {foods.map(item => (
-                        item.recipe && item.recipe.map(r => <li key={r}>{r}</li>)
-                      ))}
+                      {vitaminInfo[0].recipe && vitaminInfo[0].recipe.map(r => <li key={r}>{r}</li>)}
                     </div>
                   </div>
                 </div>

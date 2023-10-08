@@ -229,6 +229,8 @@ class readingData:
                 ingredients.append(j)
                 if len(ingredients) > 2:
                     break
+            if i == 6:
+                break
             areasToImproveMap[areasToImprove[i]] = ingredients
         return areasToImproveMap
 
