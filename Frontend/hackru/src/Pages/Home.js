@@ -64,8 +64,8 @@ function Home() {
             
             <div className='right-half'>
                 <h1>What's in your fridge?</h1>
+                {message && <p>{message}</p>}
                 <form onSubmit={handleUpload} method='POST' encType='multipart/form-data'>
-                    <h2>{message}</h2>
                 <label class="custom-file-upload">
                     <input type="file" onChange={handleFile} accept=".jpg,.jpeg,.png,.gif" id="fileInput" />
                     <span>Choose a file...</span>

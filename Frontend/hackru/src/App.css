@@ -1,14 +1,15 @@
 
 .site-title {
   top: 0;
-  background-color: black;
+  background-color: rgb(82, 82, 253);
   color: white;
   margin: 0px;
   padding: 10px;
+  padding-left: 25px;
 }
 .Home {
   display: flex;
-  background-image: linear-gradient( black, white);
+  background-image: linear-gradient( rgb(82, 82, 253), rgb(227, 54, 54));
   color: white;
   height: 100vh;
   overflow: hidden;
@@ -36,15 +37,15 @@
 
 .custom-file-upload input[type='file'] {
   display: none;
-  
 }
 
 .custom-file-upload {
   position: relative; /* Necessary for the absolute positioning of the pseudo-element */
-  display: inline-block;
-  padding: 20px;
+  display: block;
+  padding: 10px;
   cursor: pointer;
   overflow: hidden; /* Hide the overflow of the expanding line */
+  font-size: 2rem;
 }
 
 .custom-file-upload::before {
@@ -78,7 +79,7 @@
   margin-left: auto;
   margin-right: auto;
   color: white;
-  font-weight: bold;
+  font-size: 2rem;
 
   position: relative; /* Necessary for the absolute positioning of the pseudo-element */
   cursor: pointer;
@@ -120,7 +121,7 @@
 /* vitamins page */
 
 .background {
-  background-image: linear-gradient( black, white);
+  background-image: linear-gradient( rgb(82, 82, 253), rgb(227, 54, 54));
 }
 .vitamin-container {
   width: 50%; 
