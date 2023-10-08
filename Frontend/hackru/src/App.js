@@ -4,6 +4,9 @@ import DisplayPage_Vitamins from './Pages/DisplayPage_Vitamins.js'
 import DisplayPage_Recipes from './Pages/DisplayPage_Recipes.js'
 import React from 'react';
 import {Routes, Route} from 'react-router-dom';
+import { Buffer } from 'buffer';
+
+global.Buffer = Buffer;
 
 
 function App() {

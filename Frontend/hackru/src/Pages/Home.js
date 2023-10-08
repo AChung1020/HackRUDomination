@@ -1,20 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {useTypewriter, Cursor } from 'react-simple-typewriter';
-import { uploadFile } from 'react-s3';
 
-const S3_BUCKET ='hackru';
-const REGION ='us-east-1';
-const ACCESS_KEY ="AKIASXA4X4ZE7TLPOTB6";
-const SECRET_ACCESS_KEY ="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";
-
-const config = {
-    bucketName: S3_BUCKET,
-    region: REGION,
-    accessKeyId: ACCESS_KEY,
-    secretAccessKey: SECRET_ACCESS_KEY,
-
-}
 
 function Home() {
     const navigate = useNavigate();
@@ -41,44 +28,26 @@ function Home() {
         }
     }
 
-    // function handleUpload(event) {
-    //     event.preventDefault();
-    
-    //     if(file != null) {
-    //         const reader = new FileReader();
-    //         reader.onloadend = function() {
-    //             const base64String = reader.result;
-    //             // Sending the base64 string to the backend
-    //             fetch('http://localhost:5000/imageRetrieval', {
-    //                 method: 'POST',
-    //                 headers: {
-    //                     'Content-Type': 'application/json'
-    //                 },
-    //                 body: JSON.stringify({ image: base64String })
-    //             })
-    //             .then(response => response.json())
-    //             .then(result => {
-    //                 console.log("Success:", result);
-    //             })
-    //             .catch(error => {
-    //                 console.error('Error:', error);
-    //             });
-    //         }
-    //         reader.readAsDataURL(file);
-    //     }
-    // }
+    function handleUpload(event) {
 
-    const [selectedFile, setSelectedFile] = useState(null);
-
-    const handleFileInput = (e) => {
-        setSelectedFile(e.target.files[0]);
-    }
-
-    const handleUpload = async (file) => {
-        uploadFile(file, config)
-            .then(data => console.log(data))
-            .catch(err => console.error(err))
-    }
+        event.preventDefault();
+        const formData = new FormData()
+        formData.append('file', file)
+        
+        if(file != null) {
+            fetch('http://localhost:5000/imageRetrieval',  //change to URL of API later
+            {  method: 'POST',
+            body: formData
+            }).then((response) => response.json())
+            .then((result) => {
+                console.log("Success", result)
+            })
+            .catch(error => {
+                console.error('error', error)
+            })
+        }
+        
+    };
 
     const [welcome]  = useTypewriter({
         words: ['Welcome to _____'],
@@ -97,10 +66,12 @@ function Home() {
         
         <div className='right-half'>
             <h1> Find out what you are missing in your diet!!! :D</h1>
-            <form onSubmit = { handleUpload }>
+            <form onSubmit = { handleUpload } method='POST' encType='multipart/form-data'>
+                <React.Fragment>
                 <h2>What's in your Fridge?</h2>
-                <input type = 'file' onChange={handleFileInput}/>
-                <button  onClick={() => handleUpload(selectedFile)}>Submit</button>
+                <input type = 'file' onChange={handleFile}/>
+                </React.Fragment>
+                <button  >Submit</button>
             </form>
         </div>
         
