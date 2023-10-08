@@ -52,14 +52,7 @@ def getImage():
                     name = name[1:-1]
                     if name in ingredientsData.recipesForEachIngredient:
                         actualValues.append(name)
-        # values = jsonify(str(values))['data']
-
-        # for j in values:
-        #     if j in ingredientsData.recipesForEachIngredient:
-        #         actualValues.append(j)
-        ingredientsData.changeIngredients(actualValues)
-        
-    # ingredientsData = readingData(["apple", "banana", "orange"])
+        ingredientsData.changeIngredients(actualValues)        
     return jsonify("Received your image!")
 
 @app.route('/valuesRetrieval', methods={'POST'})

@@ -49,7 +49,7 @@ class readingData:
         for i in self.currentIngredients:
             self.ingredientMap[i.upper()] = 1
 
-    def getNutritonalInformation(self):
+    def getNutritionalInformation(self):
 
         information = [0 for element in range(
             len(self.nutritionallyDenseFoods))]
@@ -259,8 +259,10 @@ class readingData:
         for i in range(len(areasToImprove)):
             if i == 5:
                 break
-            # if areasToImprove[i] in self.actualNamesOfVitamins:
-            #     areasToImprove[i] = self.actualNamesOfVitamins[areasToImprove[i]]
+            if areasToImprove[i] in self.actualNamesOfVitamins:
+                areasToImprove[i] = self.actualNamesOfVitamins[areasToImprove[i]]
+            # print(areasToImprove[i])
+            # print(self.actualNamesOfVitamins[areasToImprove[i]])
             ingredients = self.nutritionallyDenseFoods[areasToImprove[i]]
             for j in ingredients:
                 if len(recipes[i]) > 2:

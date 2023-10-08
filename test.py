@@ -731,9 +731,17 @@ def test8():
     nutrientMap["Household Weights 1st Household Weight Description"] = "HouseholdWeights1stHouseholdWeightDescription"
     nutrientMap["Household Weights 2nd Household Weight"] = "HouseholdWeights2ndHouseholdWeight"
     nutrientMap["Household Weights 2nd Household Weight Description"] = "HouseholdWeights2ndHouseholdWeightDescription"
+    nutrientMap["Vitamin A - IU"] = "VitaminA_IU"
+    nutrientMap["Vitamin A - RAE"] = "VitaminA_RAE"
+    nutrientMap["Vitamin B12"] = "VitaminB12"
+    nutrientMap["Vitamin B6"] = "VitaminB6"
+    nutrientMap["Vitamin C"] = "VitaminC"
+    nutrientMap["Vitamin E"] = "VitaminE"
+    nutrientMap["Vitamin K"] = "VitaminK"
+
     pd.to_pickle(nutrientMap, "actualNamesOfVitamins.pkl")
 
-# test8()
+test8()
 
 # nutrientMap[val[0]] = "AlphaCarotene"
 # nutrientMap[val[1]] = "Ash"
