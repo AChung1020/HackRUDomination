@@ -46,15 +46,16 @@ function Home() {
     }
 
     const [welcome] = useTypewriter({
-        words: ['Welcome to _____'],
-        typeSpeed: 120
+        words: ['nutrition', 'recipes', 'eating', 'deliciousness'],
+        typeSpeed: 120,
+        loop:{}
     });
 
     return (
         <div className='Home'>
             <div className='left-half'>
                 <h1>
-                    {welcome} 
+                    Welcome to better {welcome} 
                     <span style={{ color: 'white'}}>
                         <Cursor cursortStyle='|'/>
                     </span>
@@ -62,11 +63,13 @@ function Home() {
             </div>
             
             <div className='right-half'>
-                <h1>Find out what you are missing in your diet!!! :D</h1>
-                {message && <p>{message}</p>}
+                <h1>What's in your fridge?</h1>
                 <form onSubmit={handleUpload} method='POST' encType='multipart/form-data'>
-                    <h2>What's in your Fridge?</h2>
-                    <input type='file' onChange={handleFile} accept=".jpg,.jpeg,.png,.gif"/>
+                    <h2>{message}</h2>
+                <label class="custom-file-upload">
+                    <input type="file" onChange={handleFile} accept=".jpg,.jpeg,.png,.gif" id="fileInput" />
+                    <span>Choose a file...</span>
+                </label>
                     <button>Submit</button>
                 </form>
             </div>
