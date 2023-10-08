@@ -6,32 +6,32 @@
       {"food": "Kale"}
     ],
     "B": [
-      {"food": "Whole Grains", "img": "logo192.png"},
+      {"food": "Whole Grains", "img": "logo192.png", "recipe": ["carrot salad" , "sweet potato mash"]},
       {"food": "Beans"},
       {"food": "Bananas"}
     ],
     "C": [
-      {"food": "Oranges", "img": "logo192.png"},
+      {"food": "Oranges", "img": "logo192.png", "recipe": ["carrot salad" , "sweet potato mash"]},
       {"food": "Strawberries"},
       {"food": "Bell Peppers"}
     ],
     "D": [
-      {"food": "Salmon", "img": "logo192.png"},
+      {"food": "Salmon", "img": "logo192.png", "recipe": ["carrot salad" , "sweet potato mash"]},
       {"food": "Mushrooms"},
       {"food": "Eggs"}
     ],
     "E": [
-      {"food": "Almonds", "img": "logo192.png"},
+      {"food": "Almonds", "img": "logo192.png", "recipe": ["carrot salad" , "sweet potato mash"]},
       {"food": "Spinach"},
       {"food": "Avocado"}
     ],
     "K": [
-      {"food": "Broccoli", "img": "logo192.png"},
+      {"food": "Broccoli", "img": "logo192.png", "recipe": ["carrot salad" , "sweet potato mash"]},
       {"food": "Brussels Sprouts"},
       {"food": "Kale"}
     ],
     "Omega": [
-      {"food": "Flaxseed", "img": "logo192.png"},
+      {"food": "Flaxseed", "img": "logo192.png", "recipe": ["carrot salad" , "sweet potato mash"]},
       {"food": "Walnuts"},
       {"food": "Chia Seeds"}
     ]
