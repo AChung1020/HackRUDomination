@@ -119,12 +119,15 @@ class readingData:
         # Edit this to return the areas to improve
 
         information = self.getNutritionalInformation()
+
+        # print(information)
+
         areasToImprove = []
         val = "Data.Alpha Carotene,Data.Ash,Data.Beta Carotene,Data.Beta Cryptoxanthin,Data.Carbohydrate,Data.Cholesterol,Data.Choline,Data.Fiber,Data.Kilocalories,Data.Lutein and Zeaxanthin,Data.Lycopene,Data.Manganese,Data.Niacin,Data.Pantothenic Acid,Data.Protein,Data.Refuse Percentage,Data.Retinol,Data.Riboflavin,Data.Selenium,Data.Sugar Total,Data.Thiamin,Data.Water,Data.Fat.Monosaturated Fat,Data.Fat.Polysaturated Fat,Data.Fat.Saturated Fat,Data.Fat.Total Lipid,Data.Household Weights.1st Household Weight,Data.Household Weights.1st Household Weight Description,Data.Household Weights.2nd Household Weight,Data.Household Weights.2nd Household Weight Description,Data.Major Minerals.Calcium,Data.Major Minerals.Copper,Data.Major Minerals.Iron,Data.Major Minerals.Magnesium,Data.Major Minerals.Phosphorus,Data.Major Minerals.Potassium,Data.Major Minerals.Sodium,Data.Major Minerals.Zinc,Data.Vitamins.Vitamin A - IU,Data.Vitamins.Vitamin A - RAE,Data.Vitamins.Vitamin B12,Data.Vitamins.Vitamin B6,Data.Vitamins.Vitamin C,Data.Vitamins.Vitamin E,Data.Vitamins.Vitamin K"
         val = val.split(",")
         # print(val)
 
-        if information[14] < 40:  # Protein
+        if information[14] < 50:  # Protein
             areasToImprove.append((val[14])[5:])
         if information[0] < 216:  # Alpha Carotene
             areasToImprove.append((val[0])[5:])
@@ -148,7 +151,7 @@ class readingData:
             areasToImprove.append((val[44])[14:])
         if information[3] < 200:  # Beta Cryptoxanthin
             areasToImprove.append((val[3])[5:])
-        if information[4] < 200:  # Carbohydrate
+        if information[4] < 800:  # Carbohydrate
             areasToImprove.append((val[4])[5:])
         # if information[5] < 0:  # Cholestrol
         #     areasToImprove.append((val[5])[5:])
@@ -217,7 +220,7 @@ class readingData:
 
         areasToImproveMap = {}
 
-        print(areasToImprove)
+        # print(areasToImprove)
 
         for i in range(len(areasToImprove)):
             if areasToImprove[i] in self.actualNamesOfVitamins:
@@ -282,6 +285,7 @@ class readingData:
             # print(areasToImprove[i])
             # print(self.actualNamesOfVitamins[areasToImprove[i]])
             ingredients = self.nutritionallyDenseFoods[areasToImprove[i]]
+            print(ingredients)
             for j in ingredients:
                 if len(recipes[i]) > 2:
                     break
