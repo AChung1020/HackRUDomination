@@ -8,9 +8,9 @@ class readingData:
     def __init__(self, currentIngredients):
 
         # self.nutrients = pd.read_csv('nutrients_csvfile.csv')
-        self.allIngredientsInARecipe = pd.read_pickle('allIngredientsInARecipe.pkl')
-        self.actual_ingredients = pd.read_pickle('actual_ingredients.pkl')
-        self.ingredientsToRecipes = pd.read_pickle('ingredientsToRecipes.pkl')
+        # self.allIngredientsInARecipe = pd.read_pickle('allIngredientsInARecipe.pkl')
+        # self.actual_ingredients = pd.read_pickle('actual_ingredients.pkl')
+        # self.ingredientsToRecipes = pd.read_pickle('ingredientsToRecipes.pkl')
         self.recipe_map = pd.read_pickle('realRecipesMap.pkl')
         self.recipesForEachIngredient = pd.read_pickle('realIngredientsMap.pkl')
         self.nutrients = pd.read_csv('food.csv')
@@ -19,10 +19,11 @@ class readingData:
         self.meats = {"beef": 1, "chicken": 1, "pork": 1, "lamb": 1, "turkey": 1, "duck": 1, "goose": 1, "quail": 1, "rabbit": 1, "venison": 1, "bison": 1, "buffalo": 1, "elk": 1, "moose": 1, "emu": 1, "ostrich": 1, "kangaroo": 1, "alligator": 1, "turtle": 1, "frog": 1, "escargot": 1, "snail": 1, "bear": 1, "boar": 1, "caribou": 1, "reindeer": 1, "pheasant": 1, "squab": 1, "rabbit": 1, "squirrel": 1, "bear": 1, "boar": 1, "caribou": 1, "reindeer": 1, "pheasant": 1, "squab": 1, "rabbit": 1, "squirrel": 1, "bear": 1, "boar": 1, "caribou": 1, "reindeer": 1, "pheasant": 1, "squab": 1, "rabbit": 1, "squirrel": 1, "bear": 1, "boar": 1, "caribou": 1, "reindeer": 1, "pheasant": 1, "squab": 1, "rabbit": 1, "squirrel": 1, "bear": 1, "boar": 1, "caribou": 1, "reindeer": 1, "pheasant": 1, "squab": 1, "rabbit": 1, "squirrel": 1, "bear": 1, "boar": 1, "caribou": 1, "reindeer": 1, "pheasant": 1, "squab": 1, "cod": 1, "fish": 1, "crab": 1, "mussels": 1, "octopus": 1, "shrimp":1, "prawns": 1}
         self.carbs = {"rice": 1, "bread": 1, "pasta": 1, "potatoes": 1}
         self.obviousSpices = {"salt": 1, "pepper": 1, "water": 1, "olive oil": 1, "flour": 1, "sugar": 1, "soy sauce": 1, "vinegar": 1}
+        
         self.nutritionallyDenseFoods = pd.read_pickle('nutrientMap.pkl')
-
+        self.bestIngredientRecipes = pd.read_pickle("bestIngredientsRecipes.pkl")
         # self.nutritionallyDenseFoods = defaultdict(list)
-        self.recipesWithFoods = defaultdict(list)
+        # self.recipesWithFoods = defaultdict(list)
         self.ingredientMap = {}
         for i in self.currentIngredients:
             self.ingredientMap[i.upper()] = 1
@@ -38,7 +39,7 @@ class readingData:
         
         # Get all the recipes that contain the current ingredients
 
-        keys = self.nutritionallyDenseFoods.keys()
+        # keys = self.nutritionallyDenseFoods.keys()
 
         for name, data in self.nutrients.iterrows():
             currIngredient = data['Category']
@@ -142,11 +143,32 @@ class readingData:
         
         return possibleRecipes
     
-    
+    def determineAdditionalRecipes(self):
+        
+        areasToImprove = self.determineAreasToImprove()
+
+        recipes = defaultdict(list)
+
+        for i in range(len(areasToImprove)):
+            if i == 5:
+                break
+            ingredients = self.nutritionallyDenseFoods[areasToImprove[i]]
+            for j in ingredients:
+                if recipes[i] > 2:
+                    break
+                possibleRecipes = self.bestIngredientRecipes[j]
+                recipes[i].append(possibleRecipes[0])
+                continue
+        
+        print(recipes)
+            
+                
+            
+
 
 
 readingData = readingData(['beef', 'cheese', 'tomatoes', 'onions'])
-print(readingData.populateRecipes())
+# print(readingData.determineAdditionalRecipes())
 
 
 
