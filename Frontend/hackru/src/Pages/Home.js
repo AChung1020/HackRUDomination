@@ -29,7 +29,6 @@ function Home() {
     }
 
     function handleUpload(event) {
-
         event.preventDefault();
         const formData = new FormData()
         formData.append('file', file)
@@ -55,27 +54,29 @@ function Home() {
     })
 
 
-    return (<div className='Home'>
-        <div className='left-half'>
-            <h1> {welcome} 
-            <span style={{ color: 'white'}}>
-                <Cursor cursortStyle = '|'/>
-            </span>
-            </h1>
+    return (
+        <div className='Home'>
+            <div className='left-half'>
+                <h1>
+                    {welcome} 
+                    <span style={{ color: 'white'}}>
+                        <Cursor cursortStyle='|'/>
+                    </span>
+                </h1>
+            </div>
+            
+            <div className='right-half'>
+                <h1>Find out what you are missing in your diet!!! :D</h1>
+                <form onSubmit={handleUpload} method='POST' encType='multipart/form-data'>
+                    <React.Fragment>
+                        <h2>What's in your Fridge?</h2>
+                        <input type='file' onChange={handleFile}/>
+                    </React.Fragment>
+                    <button>Submit</button>
+                </form>
+            </div>
         </div>
-        
-        <div className='right-half'>
-            <h1> Find out what you are missing in your diet!!! :D</h1>
-            <form onSubmit = { handleUpload } method='POST' encType='multipart/form-data'>
-                <React.Fragment>
-                <h2>What's in your Fridge?</h2>
-                <input type = 'file' onChange={handleFile}/>
-                </React.Fragment>
-                <button  >Submit</button>
-            </form>
-        </div>
-        
-        </div>)
+    );
 }
 
 export default Home;
