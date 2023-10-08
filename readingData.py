@@ -1,6 +1,7 @@
 import pandas as pd
 from collections import defaultdict
 import csv
+import json
 
 class readingData:
 
@@ -10,10 +11,14 @@ class readingData:
         self.allIngredientsInARecipe = pd.read_pickle('allIngredientsInARecipe.pkl')
         self.actual_ingredients = pd.read_pickle('actual_ingredients.pkl')
         self.ingredientsToRecipes = pd.read_pickle('ingredientsToRecipes.pkl')
-        self.recipe_map = pd.read_pickle('recipe_map.pkl')
+        self.recipe_map = pd.read_pickle('realRecipesMap.pkl')
+        self.recipesForEachIngredient = pd.read_pickle('realIngredientsMap.pkl')
         self.nutrients = pd.read_csv('food.csv')
         self.currentIngredients = currentIngredients
 
+        self.meats = {"beef": 1, "chicken": 1, "pork": 1, "lamb": 1, "turkey": 1, "duck": 1, "goose": 1, "quail": 1, "rabbit": 1, "venison": 1, "bison": 1, "buffalo": 1, "elk": 1, "moose": 1, "emu": 1, "ostrich": 1, "kangaroo": 1, "alligator": 1, "turtle": 1, "frog": 1, "escargot": 1, "snail": 1, "bear": 1, "boar": 1, "caribou": 1, "reindeer": 1, "pheasant": 1, "squab": 1, "rabbit": 1, "squirrel": 1, "bear": 1, "boar": 1, "caribou": 1, "reindeer": 1, "pheasant": 1, "squab": 1, "rabbit": 1, "squirrel": 1, "bear": 1, "boar": 1, "caribou": 1, "reindeer": 1, "pheasant": 1, "squab": 1, "rabbit": 1, "squirrel": 1, "bear": 1, "boar": 1, "caribou": 1, "reindeer": 1, "pheasant": 1, "squab": 1, "rabbit": 1, "squirrel": 1, "bear": 1, "boar": 1, "caribou": 1, "reindeer": 1, "pheasant": 1, "squab": 1, "rabbit": 1, "squirrel": 1, "bear": 1, "boar": 1, "caribou": 1, "reindeer": 1, "pheasant": 1, "squab": 1, "cod": 1, "fish": 1, "crab": 1, "mussels": 1, "octopus": 1, "shrimp":1, "prawns": 1}
+        self.carbs = {"rice": 1, "bread": 1, "pasta": 1, "potatoes": 1}
+        self.obviousSpices = {"salt": 1, "pepper": 1, "water": 1, "olive oil": 1, "flour": 1, "sugar": 1, "soy sauce": 1, "vinegar": 1}
         self.nutritionallyDenseFoods = pd.read_pickle('nutrientMap.pkl')
 
         # self.nutritionallyDenseFoods = defaultdict(list)
@@ -67,9 +72,9 @@ class readingData:
                 information[24] += float(data[val[24]])
                 information[25] += float(data[val[25]])
                 information[26] += float(data[val[26]])
-                information[27] += float(data[val[27]])
+                # information[27] += float(data[val[27]])
                 information[28] += float(data[val[28]])
-                information[29] += float(data[val[29]])
+                # information[29] += float(data[val[29]])
                 information[30] += float(data[val[30]])
                 information[31] += float(data[val[31]])
                 information[32] += float(data[val[32]])
@@ -109,22 +114,39 @@ class readingData:
 
         # return recipes with the current ingredients
 
-        possibleRecipes = []
+        possibleRecipes = {}
 
-        for i in self.allIngredientsInARecipe.keys():
-            data = self.allIngredientsInARecipe[i]
-            total = 0
-            for j in data:
-                if j in self.ingredientMap:
-                    total += 1
-            if total >= len(data) - 1 or (total / len(data)) > 0.8:
-                possibleRecipes.append(i)
+        for i in self.recipe_map.keys():
+            ingredients = self.recipe_map[i]
+            totalIngredientsMatch = 0
+            totalOfPassedInMatch = 0
+            val = True
+            for j in ingredients:
+                if j.upper() in self.ingredientMap or j in self.obviousSpices:
+                    if j.upper() in self.ingredientMap:
+                        totalOfPassedInMatch += 1
+                    if j in self.meats or j in self.carbs:
+                        totalIngredientsMatch += 2
+                    else:
+                        totalIngredientsMatch += 1
+                elif j in self.meats:
+                    val = False
+                    break
+                elif j in self.carbs:
+                    val = False
+                    break
+            if not(val):
+                continue
+            if ((totalIngredientsMatch/len(ingredients)) > 0.5):
+                possibleRecipes[i] = ingredients
         
         return possibleRecipes
+    
+    
 
 
-# readingData = readingData(['chicken', 'Rice', 'Broccoli'])
-# print(readingData.getNutritonalInformation())
+readingData = readingData(['beef', 'cheese', 'tomatoes', 'onions'])
+print(readingData.populateRecipes())
 
 
 
