@@ -39,28 +39,28 @@
 }
 
 .custom-file-upload {
-  position: relative; /* Necessary for the absolute positioning of the pseudo-element */
+  position: relative; 
   display: block;
   padding: 10px;
   cursor: pointer;
-  overflow: hidden; /* Hide the overflow of the expanding line */
+  overflow: hidden; 
   font-size: 2rem;
 }
 
 .custom-file-upload::before {
-  content: ""; /* Required for the pseudo-element to be displayed */
+  content: ""; 
   position: absolute;
-  bottom: 0; /* Position at the bottom */
-  left: 50%; /* Start from the middle */
-  transform: translateX(-50%); /* Ensure it's centered */
-  height: 2px; /* Adjust the thickness of the line if needed */
-  background-color: #fff; /* Change to desired line color */
-  width: 0; /* Start with no width */
-  transition: width 0.3s ease; /* Adjust speed as needed */
+  bottom: 0; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  height: 2px; 
+  background-color: #fff; 
+  width: 0; 
+  transition: width 0.3s ease; 
 }
 
 .custom-file-upload:hover::before {
-  width: 100%; /* Expand the line to the full width on hover */
+  width: 100%; 
 }
 
 
@@ -80,25 +80,25 @@
   color: white;
   font-size: 2rem;
 
-  position: relative; /* Necessary for the absolute positioning of the pseudo-element */
+  position: relative; 
   cursor: pointer;
-  overflow: hidden; /* Hide the overflow of the expanding line */
+  overflow: hidden;
 }
 
 .Home button:before {
-  content: ""; /* Required for the pseudo-element to be displayed */
+  content: "";
   position: absolute;
-  bottom: 0; /* Position at the bottom */
-  left: 50%; /* Start from the middle */
-  transform: translateX(-50%); /* Ensure it's centered */
-  height: 2px; /* Adjust the thickness of the line if needed */
-  background-color: #fff; /* Change to desired line color */
-  width: 0; /* Start with no width */
-  transition: width 0.3s ease; /* Adjust speed as needed */
+  bottom: 0; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  height: 2px; 
+  background-color: #fff; 
+  width: 0; 
+  transition: width 0.3s ease; 
 }
 
 .Home button:hover::before {
-  width: 100%; /* Expand the line to the full width on hover */
+  width: 100%; 
 }
 
 /* left half of home page */
@@ -139,6 +139,8 @@
   border-radius: 8px;
   color: black;
   background-color: #fff;
+  width: 600px;
+  height: 300px;
 }
 
 .vitamin-listing .food-list {
@@ -169,19 +171,12 @@
 }
 
 .image-container {
-  width: 150px; 
-  height: 150px;
+  width: 400px; 
+  height: 250px;
   perspective: 1000px; 
   position: relative;
   cursor: pointer;
-}
-
-.card {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  transform-style: preserve-3d;
-  transition: transform 0.5s;
+  margin-right: 50px;
 }
 
 .back {
@@ -192,10 +187,18 @@
   transform: rotateY(180deg);
 }
 
-.card .front,
-.card .back {
+.card {
   width: 100%;
   height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.card .front,
+.card .back {
+  width: 100%;  /* Adjusted from 150% */
+  height: 100%; /* Adjusted from 150% */
   position: absolute;
   backface-visibility: hidden;
 }
