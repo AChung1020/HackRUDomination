@@ -50,7 +50,7 @@ def getImage():
                 lines = val.strip().split('\n')
                 name = lines[2].split(":")[1][1:].strip()
                 value = lines[3].split(":")[1][1:]
-                if float(value) >= 0.6:
+                if float(value) >= 0.35:
                     name = name[1:-1]
                     if name in ingredientsData.recipesForEachIngredient:
                         actualValues.append(name)
