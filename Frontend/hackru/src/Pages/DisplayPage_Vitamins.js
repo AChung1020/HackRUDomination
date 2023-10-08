@@ -70,7 +70,7 @@ function DisplayPage_Vitamins() {
                 <div className="image-container" onClick={() => handleFlip(vitamin)}>
                   <div className={`card ${flipped === vitamin ? 'flip' : ''}`}>
                     <div className="front">
-                      <img className="image-food" src={vitaminInfo[0].img} alt={vitamin} />
+                      <div>Click here for a recipe!</div>
                     </div>
                     <div className="back">
                       {vitaminInfo[0].recipe && vitaminInfo[0].recipe.map(r => <li key={r}>{r}</li>)}
