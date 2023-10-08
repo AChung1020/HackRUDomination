@@ -8,9 +8,15 @@ import readingData
 
 import os
 
+import configparser
 
-os.environ["AWS_ACCESS_KEY_ID"] = "AKIASXA4X4ZE7TLPOTB6"
-os.environ["AWS_SECRET_ACCESS_KEY"] = "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"
+filePath = os.path.expanduser(".aws/credentials")
+
+config = configparser.ConfigParser()
+config.read(filePath)
+
+os.environ["AWS_ACCESS_KEY_ID"] = config.get("default", "aws_access_key_id")
+os.environ["AWS_SECRET_ACCESS_KEY"] = config.get("default", "lMSYln/abaT84ml/2cBMaPYXVr/h7bMiZvgltl8Z")
 
 app = Flask(__name__)
 # CORS(app, resources={r"/*": {"origins": "http://localhost:3000", "http://localhost:5000"}})
