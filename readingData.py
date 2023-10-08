@@ -6,15 +6,14 @@ import json
 
 class readingData:
 
-    def __init__(self, currentIngredients):
+    def __init__(self, currentIngredients = []):
 
         # self.nutrients = pd.read_csv('nutrients_csvfile.csv')
         # self.allIngredientsInARecipe = pd.read_pickle('allIngredientsInARecipe.pkl')
         # self.actual_ingredients = pd.read_pickle('actual_ingredients.pkl')
         # self.ingredientsToRecipes = pd.read_pickle('ingredientsToRecipes.pkl')
         self.recipe_map = pd.read_pickle('realRecipesMap.pkl')
-        self.recipesForEachIngredient = pd.read_pickle(
-            'realIngredientsMap.pkl')
+        self.recipesForEachIngredient = pd.read_pickle('realIngredientsMap.pkl')
         self.nutrients = pd.read_csv('food.csv')
         self.currentIngredients = currentIngredients
 
@@ -44,7 +43,13 @@ class readingData:
         for i in self.currentIngredients:
             self.ingredientMap[i.upper()] = 1
 
-    def getNutritionalInformation(self):
+    def changeIngredients(self, currentIngredients):
+        self.currentIngredients = currentIngredients
+        self.ingredientMap = {}
+        for i in self.currentIngredients:
+            self.ingredientMap[i.upper()] = 1
+
+    def getNutritonalInformation(self):
 
         information = [0 for element in range(
             len(self.nutritionallyDenseFoods))]

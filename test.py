@@ -642,7 +642,7 @@ def test5():
     pd.to_pickle(recipesMap, 'realRecipesMap.pkl')
     pd.to_pickle(ingredientsMap, 'realIngredientsMap.pkl')
 
-# test5()
+test5()
 
 
 def test6():
@@ -726,8 +726,7 @@ def test8():
     nutrientMap["Household Weights 2nd Household Weight Description"] = "HouseholdWeights2ndHouseholdWeightDescription"
     pd.to_pickle(nutrientMap, "actualNamesOfVitamins.pkl")
 
-
-test8()
+# test8()
 
 # nutrientMap[val[0]] = "AlphaCarotene"
 # nutrientMap[val[1]] = "Ash"
